@@ -1,0 +1,125 @@
+/* Contact Information Section */
+.contact-info-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf0 100%);
+}
+
+.contact-info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d5016;
+    text-align: center;
+    margin: 0 0 60px 0;
+    letter-spacing: 1px;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #2d5016 0%, #3d7020 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.info-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.info-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.info-card-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555555;
+    margin: 0;
+}
+
+.info-link {
+    color: #3d7020;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.info-link:hover {
+    color: #2d5016;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-info-section {
+        padding: 80px 20px;
+    }
+
+    .contact-info-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .info-card {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-section {
+        padding: 60px 20px;
+    }
+
+    .contact-info-title {
+        font-size: 1.8rem;
+    }
+
+    .info-card {
+        padding: 30px 20px;
+    }
+}

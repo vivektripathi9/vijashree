@@ -1,0 +1,39 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* All Headings Use Sora Font */
+h1, h2, h3, h4, h5, h6,
+.banner-title,
+.section-title,
+.subsection-title,
+.welcome-title,
+.welcome-quote-title,
+.section-heading,
+.legacy-title,
+.legacy-subtitle,
+.founder-detail-title,
+.founder-name,
+.director-section-title,
+.director-subtitle,
+.director-name,
+.mission-title,
+.vision-title {
+    font-family: 'Sora', sans-serif;
+}
+
+/* About Us Container */
+.about-us-container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf0 100%);
+}
