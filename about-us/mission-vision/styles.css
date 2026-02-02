@@ -73,7 +73,7 @@
     font-family: 'Sora', sans-serif;
     font-size: 2.2rem;
     font-weight: 700;
-    color: #2d5016;
+    color: #1a1a1a;
     margin: 0 0 35px 0;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -90,7 +90,7 @@
     left: 0;
     width: 0;
     height: 3px;
-    background: #3d7020;
+    background: #D4AF37;
     transition: width 0.4s ease;
 }
 
@@ -101,7 +101,7 @@
 
 .mission-area:hover .mission-title,
 .vision-area:hover .vision-title {
-    color: #3d7020;
+    color: #D4AF37;
 }
 
 /* Content */

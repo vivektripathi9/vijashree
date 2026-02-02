@@ -12,7 +12,7 @@
 .contact-form-title {
     font-size: 3rem;
     font-weight: 700;
-    color: #2d5016;
+    color: #1a1a1a;
     text-align: center;
     margin: 0 0 15px 0;
     letter-spacing: 1px;
@@ -47,7 +47,7 @@
 .form-label {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #2d5016;
+    color: #1a1a1a;
     margin: 0;
 }
 
@@ -69,8 +69,8 @@
 .form-textarea:focus,
 .form-select:focus {
     outline: none;
-    border-color: #3d7020;
-    box-shadow: 0 0 0 4px rgba(61, 112, 32, 0.1);
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
 }
 
 .form-input::placeholder,
@@ -108,7 +108,7 @@
     height: 20px;
     margin-top: 2px;
     cursor: pointer;
-    accent-color: #3d7020;
+    accent-color: #D4AF37;
     flex-shrink: 0;
 }
 
@@ -122,8 +122,8 @@
 
 .form-submit-btn {
     padding: 16px 40px;
-    background: linear-gradient(135deg, #2d5016 0%, #3d7020 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #D4AF37 0%, #F4A460 100%);
+    color: #1a1a1a;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -132,15 +132,15 @@
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     align-self: flex-start;
     margin-top: 10px;
 }
 
 .form-submit-btn:hover {
-    background: linear-gradient(135deg, #3d7020 0%, #4d9028 100%);
+    background: linear-gradient(135deg, #F4A460 0%, #FFD700 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 .form-submit-btn:active {

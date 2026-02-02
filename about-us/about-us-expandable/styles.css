@@ -17,7 +17,7 @@
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2d5016;
+    color: #1a1a1a;
     margin: 0;
     letter-spacing: 1px;
 }
@@ -27,22 +27,22 @@
     align-items: center;
     gap: 10px;
     padding: 14px 32px;
-    background: linear-gradient(135deg, #2d5016 0%, #3d7020 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #D4AF37 0%, #F4A460 100%);
+    color: #1a1a1a;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     font-family: inherit;
 }
 
 .explore-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
-    background: linear-gradient(135deg, #3d7020 0%, #4d9028 100%);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #F4A460 0%, #FFD700 100%);
 }
 
 .explore-btn:active {
@@ -116,10 +116,10 @@
 .subsection-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2d5016;
+    color: #1a1a1a;
     margin: 0 0 20px 0;
     padding-bottom: 15px;
-    border-bottom: 3px solid #3d7020;
+    border-bottom: 3px solid #D4AF37;
 }
 
 .founder-content p,
