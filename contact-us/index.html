@@ -14,15 +14,6 @@
     <link rel="stylesheet" href="contact-info/styles.css">
     <link rel="stylesheet" href="footer/styles.css">
     <link rel="stylesheet" href="../home/navbar.css">
-    <style>
-        .nav-links a{
-            color: #000;
-        }
-        .cta-button{
-            border: 1px solid #000;
-            color: #000;
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -34,7 +25,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about-us/">About Us</a></li>
-                <li><a href="../projects/">Projects</a></li>
+                <li class="dropdown">
+                    <a href="../projects/">Projects</a>
+                    <div class="dropdown-content">
+                        <span>Ongoing</span>
+                        <span>Completed</span>
+                        <span>Upcoming</span>
+                    </div>
+                </li>
                 <li><a href="../contact-us/">
                     <button class="cta-button">Contact Us</button>
                 </a></li>
@@ -46,6 +44,20 @@
             </div>
         </div>
     </nav>
+
+    <!-- Banner Section -->
+    <section class="contact-banner">
+        <div class="banner-image-container">
+            <img src="../components/contact.png" alt="Contact Us Banner" class="banner-image">
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <h1 class="banner-title">Contact Us</h1>
+                    <p class="banner-subtitle">Get in touch with us for all your inquiries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="contact-us-container">
         <!-- Contact Form Section - Two Column Layout -->
         <section class="contact-form-section">
