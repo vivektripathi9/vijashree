@@ -112,6 +112,118 @@
             width: 100%;
         }
 
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            min-width: 180px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            padding: 0.5rem 0;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar.scrolled .dropdown-content {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content span {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .navbar.scrolled .dropdown-content span {
+            color: var(--primary-dark);
+        }
+
+        .dropdown-content span::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 1.5rem;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .dropdown-content span:hover::after {
+            width: calc(100% - 3rem);
+        }
+
+        .dropdown > a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .dropdown:hover > a::after {
+            width: 100%;
+        }
+
+        /* Dropdown arrow indicator */
+        .dropdown > a {
+            position: relative;
+            padding-right: 15px;
+        }
+
+        .dropdown > a::before {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover > a::before {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
         .cta-button {
             padding: 0.75rem 1.8rem;
             background: transparent;
@@ -997,6 +1109,49 @@
                 z-index: 1001;
             }
 
+            /* Mobile dropdown styles */
+            .dropdown-content {
+                position: static;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: none;
+                box-shadow: none;
+                border-radius: 0;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown.active .dropdown-content {
+                max-height: 200px;
+            }
+
+            .dropdown-content span {
+                background: transparent !important;
+                color: rgba(255, 255, 255, 0.8) !important;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                margin-left: 1rem;
+                border-left: 2px solid var(--accent-gold);
+            }
+
+            .dropdown-content span::after {
+                display: none;
+            }
+
+            .dropdown-content span:hover {
+                color: var(--accent-gold) !important;
+                transform: none;
+            }
+
+            .dropdown > a::before {
+                display: none;
+            }
+
             .hero-title {
                 font-size: 3rem;
             }
@@ -1798,7 +1953,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about-us/">About Us</a></li>
-                <li><a href="./projects/">Projects</a></li>
+                <li class="dropdown">
+                    <a href="./projects/">Projects</a>
+                    <div class="dropdown-content">
+                        <span>Ongoing</span>
+                        <span>Completed</span>
+                        <span>Upcoming</span>
+                    </div>
+                </li>
                 <li><a href="./contact-us/">
                     <button class="cta-button">Contact Us</button>
                 </a></li>
@@ -2136,7 +2298,7 @@
                         <li><a href="#about">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#legacy">Projects</a></li>
-                        <li><a href="#why-choose">Contact Us</a></li>
+                        <li><a href="./contact-us/index.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -2184,26 +2346,15 @@
                     <p class="footer-description">
                         Built on innovation, leadership and trust, Vijayasri Green Homes is one of the South India's leading developers and builders with property management.
                     </p>
-                    <div class="footer-contact-info">
-                        <p class="contact-item">
-                            <span class="contact-label">Phone:</span> 
-                            <a href="tel:+91-7816000555" class="contact-link">+91-7816000555</a>
-                        </p>
-                        <p class="contact-item">
-                            <span class="contact-label">Email:</span> 
-                            <a href="mailto:info@vijayasrigreenhomes.com" class="contact-link">info@vijayasrigreenhomes.com</a>
-                        </p>
-                    </div>
                 </div>
 
                 <!-- Middle Section - Quick Links & Social Media -->
                 <div class="footer-middle">
                     <h3 class="footer-heading">QUICK LINKS</h3>
                     <nav class="footer-nav">
-                        <a href="../about-us/index.html" class="footer-link">About Us</a>
-                        <a href="#projects" class="footer-link">Projects</a>
-                        <a href="#privacy" class="footer-link">Privacy Policy</a>
-                        <a href="index.html" class="footer-link">Contact Us</a>
+                        <a href="./index.html" class="footer-link">Home</a>
+                        <a href="./about-us/index.html" class="footer-link">About Us</a>
+                        <a href="./contact-us/index.html" class="footer-link">Contact Us</a>
                     </nav>
                     <div class="social-media">
                         <a href="#" class="social-icon" aria-label="Facebook">
@@ -2892,6 +3043,7 @@
     </script>
 
 <script src="./contact-us/footer/script.js"></script>
+<script src="./home/navbar.js"></script>
     
 </body>
 </html>

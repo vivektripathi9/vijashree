@@ -42,12 +42,12 @@
 
 .welcome-quote-title {
     font-family: 'Sora', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 2.2rem;
+    font-weight: 700;
     color: #fff8e1;
     margin: 0;
-    line-height: 1.3;
-    letter-spacing: 1px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
     opacity: 0;
     transform: translateY(60px) scale(0.85);
     animation: smoothFadeInUp 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -89,7 +89,7 @@
 
 @media (max-width: 768px) {
     .welcome-quote-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -99,6 +99,6 @@
     }
 
     .welcome-quote-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 }

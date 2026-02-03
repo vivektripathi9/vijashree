@@ -11,12 +11,10 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Section Styles -->
     <link rel="stylesheet" href="banner/styles.css">
-    <link rel="stylesheet" href="about-us-expandable/styles.css">
     <link rel="stylesheet" href="welcome-quote/styles.css">
     <link rel="stylesheet" href="founder/styles.css">
-    <link rel="stylesheet" href="director/styles.css">
-    <link rel="stylesheet" href="mission-vision/styles.css">
     <link rel="stylesheet" href="welcome-content/styles.css">
+    <link rel="stylesheet" href="second/styles.css">
     <link rel="stylesheet" href="legacy/styles.css">
     <link rel="stylesheet" href="../contact-us/footer/styles.css">
     <link rel="stylesheet" href="../home/navbar.css">
@@ -33,7 +31,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about-us/">About Us</a></li>
-                <li><a href="../projects/">Projects</a></li>
+                <li class="dropdown">
+                    <a href="../projects/">Projects</a>
+                    <div class="dropdown-content">
+                        <span>Ongoing</span>
+                        <span>Completed</span>
+                        <span>Upcoming</span>
+                    </div>
+                </li>
                 <li><a href="../contact-us/">
                     <button class="cta-button">Contact Us</button>
                 </a></li>
@@ -55,67 +60,6 @@
             <div class="banner-content">
                 <img src="../components/Vijaysree-logo copy.png" alt="Vijayasri Logo" class="banner-logo">
                 <h1 class="banner-title">About Us</h1>
-            </div>
-        </section>
-
-        <!-- ABOUT US Expandable Section -->
-        <section class="about-main-section">
-            <div class="about-main-header">
-                <h2 class="section-title">ABOUT US</h2>
-                <button class="explore-btn" id="exploreBtn" aria-expanded="false">
-                    <span id="btnText">Explore More</span>
-                    <span class="arrow" id="arrow">▼</span>
-                </button>
-            </div>
-            
-            <div class="expanded-content" id="expandedContent" style="display: none;">
-                <div class="content-grid">
-                    <!-- About Founder -->
-                    <a href="#founder-section" class="founder-section card-link">
-                        <h3 class="subsection-title">About Founder</h3>
-                        <div class="founder-content">
-                            <p>Learn more about our founder and leadership.</p>
-                        </div>
-                    </a>
-
-                    <!-- About Director -->
-                    <a href="#director-section" class="director-section card-link">
-                        <h3 class="subsection-title">About Director</h3>
-                        <div class="director-content">
-                            <p>Discover our director's vision and expertise.</p>
-                        </div>
-                    </a>
-
-                    <!-- Mission -->
-                    <a href="#mission-vision-section" class="mission-section card-link">
-                        <h3 class="subsection-title">Mission</h3>
-                        <div class="mission-content">
-                            <p>Explore our mission and commitment.</p>
-                        </div>
-                    </a>
-
-                    <!-- Vision -->
-                    <a href="#mission-vision-section" class="vision-section card-link">
-                        <h3 class="subsection-title">Vision</h3>
-                        <div class="vision-content">
-                            <p>Understand our vision for the future.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Welcome to Vijaysre Section -->
-        <section class="welcome-quote-section">
-            <video class="welcome-quote-video" autoplay muted loop playsinline>
-                <source src="../components/GettyImages-1325859192.mp4" type="video/mp4">
-            </video>
-            <div class="welcome-quote-overlay"></div>
-            <div class="welcome-quote-content">
-                <h3 class="welcome-quote-title">
-                    Welcome to Vijayasri Green Homes,<br>
-                    Where Innovation, Sustainability, & Luxury Meet.
-                </h3>
             </div>
         </section>
 
@@ -147,6 +91,20 @@
             </div>
         </section>
 
+        <!-- Welcome to Vijaysre Section -->
+        <section class="welcome-quote-section">
+            <video class="welcome-quote-video" autoplay muted loop playsinline>
+                <source src="../components/GettyImages-1325859192.mp4" type="video/mp4">
+            </video>
+            <div class="welcome-quote-overlay"></div>
+            <div class="welcome-quote-content">
+                <h3 class="welcome-quote-title">
+                    Welcome to Vijayasri Green Homes,<br>
+                    Where Innovation, Sustainability, & Luxury Meet.
+                </h3>
+            </div>
+        </section>
+
         <!-- About Founder Section -->
         <section id="founder-section" class="founder-detail-section">
             <div class="founder-detail-container">
@@ -172,84 +130,40 @@
             </div>
         </section>
 
-        <!-- About Director Section -->
-        <section id="director-section" class="director-detail-section">
-            <div class="director-detail-container">
-                <div class="director-text-wrapper">
-                    <h2 class="director-section-title">Our Leaders</h2>
-                    <div class="director-detail-content">
-                        <p>
-                            Quality lifestyle – that's what Vijetha Group Vijetha is all about.
-                        </p>
-                        <p>
-                            Mr. Madanmohan Cheedalla, (Vijetha Group) succeeded as a veteran in the real estate industry. With 30+ years of experience in real estate and construction - started his career as a building planner [Civil Engineering]. His knowledge in real estate, empowered him to build innovative lifestyles in Bangalore and Hyderabad. Mr. Madanmohan is the first to introduce Gated Community Lifestyle in East Hyderabad His passion for delivering aspirational lifestyles shall be the foundation for the Vijetha Group for years to come.
-                        </p>
+        <!-- Second Section - Mission and Vision -->
+        <section class="second-section">
+            <div class="second-container">
+                <!-- Mission Row: Text Left, Image Right -->
+                <article class="mission-row">
+                    <div class="mission-content-wrapper">
+                        <h2 class="mission-heading">MISSION</h2>
+                        <div class="mission-text">
+                            <p>
+                                To deliver high-quality real estate projects through integrity, innovation, and customer-focused planning, while ensuring timely delivery, sustainable practices, and lasting trust.
+                            </p>
+                        </div>
                     </div>
-                    <p class="director-name">MR. Madan Mohan Cheedalla</p>
-                </div>
-                <div class="director-image-wrapper">
-                    <img src="director/founder-img.png" alt="MR. Madan Mohan Cheedalla" class="director-photo">
-                </div>
+                    <div class="mission-image-wrapper">
+                        <img src="../components/3839.jpg" alt="City skyline" class="mission-image">
+                    </div>
+                </article>
+
+                <!-- Vision Row: Image Left, Text Right -->
+                <article class="vision-row">
+                    <div class="vision-image-wrapper">
+                        <img src="../components/8715.jpg" alt="City skyline" class="vision-image">
+                    </div>
+                    <div class="vision-content-wrapper">
+                        <h2 class="vision-heading">VISION</h2>
+                        <div class="vision-text">
+                            <p>
+                                To become a trusted and forward-looking real estate brand by creating sustainable, well-designed developments that enhance lifestyles and add long-term value to communities.
+                            </p>
+                        </div>
+                        <div class="vision-accent-line"></div>
+                    </div>
+                </article>
             </div>
-        </section>
-
-        <!-- Mission and Vision Section -->
-        <section id="mission-vision-section" class="mission-vision-section">
-            <!-- Mission Area -->
-            <article class="mission-area">
-                <div class="mission-icon-wrapper">
-                    <img src="mission-vision/mission_17141432.png" alt="Mission Icon" class="mission-icon">
-                </div>
-                <h2 class="mission-title">MISSION</h2>
-                <div class="mission-content">
-                    <p>
-                        To deliver high-quality real estate projects through integrity, innovation, and 
-                        customer-focused planning, while ensuring timely delivery, sustainable practices, and lasting 
-                        trust.
-                    </p>
-                    <p>
-                        Our mission extends beyond construction – we are committed to transforming dreams into reality. 
-                        Every project we undertake reflects our dedication to excellence, ethical business practices, and 
-                        creating spaces that enrich lives. We believe in building not just structures, but communities 
-                        that stand the test of time.
-                    </p>
-                    <p>
-                        Through continuous innovation in design and technology, we strive to set new benchmarks in the 
-                        real estate industry while maintaining our core values of transparency, quality, and customer 
-                        satisfaction.
-                    </p>
-                </div>
-            </article>
-
-            <!-- Divider -->
-            <div class="section-divider"></div>
-
-            <!-- Vision Area -->
-            <article class="vision-area">
-                <div class="vision-icon-wrapper">
-                    <img src="mission-vision/vision_11836809.png" alt="Vision Icon" class="vision-icon">
-                </div>
-                <h2 class="vision-title">VISION</h2>
-                <div class="vision-content">
-                    <p>
-                        To become a trusted and forward-looking real estate brand by creating sustainable, 
-                        well-designed developments that enhance lifestyles and add long-term value to 
-                        communities.
-                    </p>
-                    <p>
-                        We envision a future where every development we create becomes a landmark of excellence, 
-                        contributing to the growth and prosperity of the regions we serve. Our vision is to be 
-                        recognized as pioneers in sustainable development, combining modern architecture with 
-                        environmental consciousness.
-                    </p>
-                    <p>
-                        As we expand our footprint, we remain committed to maintaining the highest standards of 
-                        quality, fostering innovation, and building lasting relationships with our stakeholders. 
-                        Our vision drives us to create spaces that inspire, communities that thrive, and legacies 
-                        that endure for generations to come.
-                    </p>
-                </div>
-            </article>
         </section>
 
         <!-- OUR LEGACY Section -->
@@ -325,9 +239,8 @@
             <div class="footer-middle">
                 <h3 class="footer-heading">Company</h3>
                 <nav class="footer-nav">
-                    <a href="#" class="footer-link">Home</a>
+                    <a href="../index.html" class="footer-link">Home</a>
                     <a href="index.html" class="footer-link">About Us</a>
-                    <a href="#projects" class="footer-link">Projects</a>
                     <a href="../contact-us/index.html" class="footer-link">Contact Us</a>
                 </nav>
             </div>
@@ -365,7 +278,6 @@
     </footer>
 
     <!-- Section Scripts -->
-    <script src="about-us-expandable/script.js"></script>
     <script src="legacy/script.js"></script>
     <script src="../contact-us/footer/script.js"></script>
     <script src="../home/navbar.js"></script>

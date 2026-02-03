@@ -14,15 +14,6 @@
     <link rel="stylesheet" href="contact-info/styles.css">
     <link rel="stylesheet" href="footer/styles.css">
     <link rel="stylesheet" href="../home/navbar.css">
-    <style>
-        .nav-links a{
-            color: #000;
-        }
-        .cta-button{
-            border: 1px solid #000;
-            color: #000;
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -34,7 +25,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about-us/">About Us</a></li>
-                <li><a href="../projects/">Projects</a></li>
+                <li class="dropdown">
+                    <a href="../projects/">Projects</a>
+                    <div class="dropdown-content">
+                        <span>Ongoing</span>
+                        <span>Completed</span>
+                        <span>Upcoming</span>
+                    </div>
+                </li>
                 <li><a href="../contact-us/">
                     <button class="cta-button">Contact Us</button>
                 </a></li>
@@ -46,52 +44,91 @@
             </div>
         </div>
     </nav>
+
+    <!-- Banner Section -->
+    <section class="contact-banner">
+        <div class="banner-image-container">
+            <img src="../components/contact.png" alt="Contact Us Banner" class="banner-image">
+            <div class="banner-overlay">
+                <div class="banner-content">
+                    <h1 class="banner-title">Contact Us</h1>
+                    <p class="banner-subtitle">Get in touch with us for all your inquiries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="contact-us-container">
-        <!-- Contact Form Section -->
+        <!-- Contact Form Section - Two Column Layout -->
         <section class="contact-form-section">
+            <div class="contact-section-header">
+                <h1 class="contact-section-title">HAVE YOU A QUESTION?</h1>
+                <p class="contact-section-subtitle">We'd love to hear from you. Here's how to get in touch.</p>
+            </div>
             <div class="contact-form-container">
-                <h1 class="contact-form-title">Get In Touch</h1>
-                <p class="contact-form-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                <!-- Left Column - Map and Contact Info -->
+                <div class="contact-map-column">
+                    <!-- Google Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.123456789!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE3LjgiTiA3N8KwMzUnNDAuOSJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="google-map">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Contact Details -->
+                    <div class="contact-details">
+                        <div class="detail-section">
+                            <h3 class="detail-title">Corporate Office:</h3>
+                            <p class="detail-text">
+                                Sy No.56/3, Nallurahalli Village, Borewell Road,<br>
+                                Whitefield, Bangalore – 560066
+                            </p>
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        <div class="detail-section">
+                            <h3 class="detail-title">Hyderabad Office:</h3>
+                            <p class="detail-text">
+                                17-17 & 18/G6, VijayaSri Nilayam,<br>
+                                Srinagar Colony, Dilsukhnagar,<br>
+                                Hyderabad – 500 060
+                            </p>
                         </div>
                     </div>
-                    <div class="form-row">
+                </div>
+
+                <!-- Right Column - Contact Form -->
+                <div class="contact-form-column">
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <div class="phone-input-group">
-                                <select id="countryCode" name="countryCode" class="form-select">
-                                    <option value="+91" selected>+91</option>
-                                    <option value="+1">+1</option>
-                                    <option value="+44">+44</option>
-                                </select>
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Contact Number" required>
-                            </div>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Name *" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this regarding?" required>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Email *" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Tell us more about your inquiry..." required></textarea>
-                    </div>
-                    <div class="form-group form-group-checkbox">
-                        <input type="checkbox" id="authorization" name="authorization" class="form-checkbox" required>
-                        <label for="authorization" class="checkbox-label">
-                            I authorize Vijayasri Green Homes and its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call. This will override DND/NDNC.
-                        </label>
-                    </div>
-                    <button type="submit" class="form-submit-btn">Send Message</button>
-                </form>
+                        <div class="form-group">
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="">Select One</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="project">Project Information</option>
+                                <option value="sales">Sales</option>
+                                <option value="support">Support</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Phone No" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit-btn">SUBMIT</button>
+                    </form>
+                </div>
             </div>
         </section>
 
@@ -116,9 +153,10 @@
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                         </div>
-                        <h3 class="info-card-title">Phone</h3>
+                        <h3 class="info-card-title">Cell</h3>
                         <p class="info-card-text">
-                            <a href="tel:+91-7816000555" class="info-link">+91-7816000555</a>
+                            <a href="tel:+919342019589" class="info-link">+91 93420 19589</a><br>
+                            <a href="tel:+919866533428" class="info-link">+91 98665 33428</a>
                         </p>
                     </div>
                     <div class="info-card">
@@ -128,9 +166,9 @@
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </div>
-                        <h3 class="info-card-title">Email</h3>
+                        <h3 class="info-card-title">E-mail</h3>
                         <p class="info-card-text">
-                            <a href="mailto:info@vijayasrigreenhomes.com" class="info-link">info@vijayasrigreenhomes.com</a>
+                            <a href="mailto:vijayasrigreenhomes2011@gmail.com" class="info-link">vijayasrigreenhomes2011@gmail.com</a>
                         </p>
                     </div>
                     <div class="info-card">
@@ -158,25 +196,14 @@
                     <p class="footer-description">
                         Built on innovation, leadership and trust, Vijayasri Green Homes is one of the South India's leading developers and builders with property management.
                     </p>
-                    <div class="footer-contact-info">
-                        <p class="contact-item">
-                            <span class="contact-label">Phone:</span> 
-                            <a href="tel:+91-7816000555" class="contact-link">+91-7816000555</a>
-                        </p>
-                        <p class="contact-item">
-                            <span class="contact-label">Email:</span> 
-                            <a href="mailto:info@vijayasrigreenhomes.com" class="contact-link">info@vijayasrigreenhomes.com</a>
-                        </p>
-                    </div>
                 </div>
 
                 <!-- Middle Section - Quick Links & Social Media -->
                 <div class="footer-middle">
                     <h3 class="footer-heading">QUICK LINKS</h3>
                     <nav class="footer-nav">
+                        <a href="../index.html" class="footer-link">Home</a>
                         <a href="../about-us/index.html" class="footer-link">About Us</a>
-                        <a href="#projects" class="footer-link">Projects</a>
-                        <a href="#privacy" class="footer-link">Privacy Policy</a>
                         <a href="index.html" class="footer-link">Contact Us</a>
                     </nav>
                     <div class="social-media">
@@ -241,6 +268,7 @@
 
             <!-- Bottom Footer Bar -->
             <div class="footer-bottom">
+<<<<<<< HEAD
                 <p class="footer-copyright">© 2026 Vijayasri Green Homes. All rights reserved.</p>
                 <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -248,6 +276,9 @@
                         <polyline points="5 12 12 5 19 12"></polyline>
                     </svg>
                 </button>
+=======
+                <p class="footer-copyright">© 2026 All rights reserved. Vijayasri</p>
+>>>>>>> 77435bea3eb5bb57c4f8277f83a3ed07798d64e6
             </div>
         </footer>
     </div>

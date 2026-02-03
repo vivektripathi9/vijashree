@@ -43,15 +43,15 @@
 }
 
 .founder-detail-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #1a1a1a;
     margin: 0 0 8px 0;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .founder-name {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #1a1a1a;
     margin: 0 0 5px 0;
@@ -59,7 +59,7 @@
 }
 
 .founder-designation {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #D4AF37;
     margin: 0 0 20px 0;
@@ -75,8 +75,8 @@
 }
 
 .founder-detail-content p {
-    font-size: 1.1rem;
-    line-height: 1.9;
+    font-size: 0.95rem;
+    line-height: 1.7;
     color: #444444;
     margin: 0;
     text-align: justify;
@@ -116,12 +116,12 @@
     }
 
     .founder-detail-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-align: center;
     }
 
     .founder-name {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         text-align: center;
     }
 
@@ -148,18 +148,18 @@
     }
 
     .founder-detail-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .founder-name {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .founder-designation {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .founder-detail-content p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }

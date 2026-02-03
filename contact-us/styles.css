@@ -26,3 +26,92 @@ h1, h2, h3, h4, h5, h6,
     min-height: 100vh;
     background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf0 100%);
 }
+
+/* Banner Section */
+.contact-banner {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+    margin-top: 0; /* No margin since navbar is transparent initially */
+}
+
+.banner-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.banner-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+    .contact-banner {
+        height: 50vh;
+        min-height: 300px;
+        margin-top: 0;
+    }
+    
+    .banner-title {
+        font-size: 2.5rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-banner {
+        height: 40vh;
+        min-height: 250px;
+        margin-top: 0;
+    }
+    
+    .banner-title {
+        font-size: 2rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 0.9rem;
+    }
+}
