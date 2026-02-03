@@ -24,7 +24,7 @@
 .founder-photo {
     width: 100%;
     max-width: 450px;
-    height: auto;
+    height: 550px;
     border-radius: 0;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     object-fit: cover;
