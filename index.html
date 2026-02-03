@@ -62,7 +62,7 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: "Sora", sans-serif;
             font-size: 1.8rem;
             font-weight: 600;
             color: white;
@@ -133,7 +133,7 @@
         .cta-button:hover {
             background: var(--accent-gold);
             border-color: var(--accent-gold);
-            color: white;
+            color: var(--primary-light);
         }
 
         .mobile-toggle {
@@ -308,7 +308,7 @@
 
         /* About Section */
         .about-section {
-            padding: 8rem 5%;
+            padding: 4rem 5%;
             background: white;
         }
 
@@ -395,7 +395,7 @@
 
         /* Legacy Section */
         .legacy-section {
-            padding: 6rem 5%;
+            padding: 4rem 5%;
             background: var(--primary-dark);
             color: white;
             position: relative;
@@ -555,22 +555,32 @@
         }
 
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* gap: 2rem 2rem; */
-            /* margin-top: 4rem; */
-            max-width: 1200px;
+            padding: 0 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            /* gap: 2rem; */
+            /* max-width: 1200px; */
             margin-left: auto;
             margin-right: auto;
             justify-content: center;
         }
+        /* .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        } */
 
         .feature-item {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem 1.2rem;
             transition: var(--transition-smooth);
             opacity: 0;
             transform: translateY(30px);
+            max-width: 380px;
         }
 
         .feature-item.animate {
@@ -1237,6 +1247,15 @@
                 font-size: 0.85rem;
             }
         }
+
+
+
+    body {
+            font-family: "Manrope", sans-serif;
+            color: var(--text-primary);
+            background: white;
+        }
+
         /* Projects Section */
         .projects-showcase-section {
             padding: 4rem 5%;
@@ -1250,15 +1269,15 @@
 
         .projects-showcase-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
         }
 
         .projects-showcase-title {
             font-family: "Sora", sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 500;
             color: var(--primary-dark);
-            margin-bottom: 2.2rem;
+            margin-bottom: 3rem;
             letter-spacing: 1px;
         }
 
@@ -1282,7 +1301,7 @@
             padding-bottom: 0.75rem;
             background: none;
             border: none;
-            font-family: "Sora", sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .projects-tab-item::after {
@@ -1308,15 +1327,173 @@
             width: 100%;
         }
 
-        /* Projects Grid */
-        .projects-display-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 4rem;
+        /* Featured Project Layout (for Ongoing) */
+        .featured-project-container {
+            display: none;
+            margin-top: 5rem;
             opacity: 0;
             transform: translateY(30px);
             animation: projectsFadeIn 0.6s ease forwards;
+        }
+
+        .featured-project-container.active {
+            display: block;
+        }
+
+        .featured-project-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--primary-light);
+            overflow: hidden;
+        }
+
+        .featured-project-image-section {
+            position: relative;
+            width: 100%;
+            height: 405px;
+            overflow: hidden;
+        }
+
+        .featured-project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .featured-project-wrapper:hover .featured-project-image {
+            transform: scale(1.05);
+        }
+
+        .featured-project-content-section {
+            padding: 3rem 4rem 3rem 0;
+        }
+
+        .featured-project-tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .featured-project-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .featured-project-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .featured-project-detail-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-project-detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .featured-detail-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            min-width: 180px;
+        }
+
+        .featured-detail-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .featured-project-cta {
+            margin-top: 2.5rem;
+        }
+
+        .featured-project-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: var(--primary-dark);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-project-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-gold);
+            transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+
+        .featured-project-button:hover::before {
+            left: 0;
+        }
+
+        .featured-project-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-project-button svg {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-project-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Projects Grid (for Completed & Upcoming) */
+        .projects-display-grid {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: projectsFadeIn 0.6s ease forwards;
+        }
+
+        .projects-display-grid.active {
+            display: grid;
         }
 
         @keyframes projectsFadeIn {
@@ -1363,7 +1540,6 @@
             width: 100%;
             height: 100%;
             background: rgba(26, 42, 78, 0.92);
-            /* background: rgba(255, 255, 255, 0.283); */
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             display: flex;
@@ -1411,10 +1587,27 @@
             color: var(--primary-dark);
             letter-spacing: 1px;
             text-transform: uppercase;
-            font-family: "Manrope", sans-serif;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .featured-project-wrapper {
+                gap: 3rem;
+            }
+
+            .featured-project-image-section {
+                height: 500px;
+            }
+
+            .featured-project-title {
+                font-size: 2.5rem;
+            }
+
+            .featured-project-content-section {
+                padding: 2.5rem 3rem 2.5rem 0;
+            }
+        }
+
         @media (max-width: 1024px) {
             .projects-display-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1431,6 +1624,19 @@
 
             .projects-tab-item {
                 font-size: 1rem;
+            }
+
+            .featured-project-wrapper {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .featured-project-image-section {
+                height: 400px;
+            }
+
+            .featured-project-content-section {
+                padding: 3rem;
             }
         }
 
@@ -1470,6 +1676,28 @@
             .project-card-hover-overlay {
                 padding: 1.5rem;
             }
+
+            .featured-project-title {
+                font-size: 2rem;
+            }
+
+            .featured-project-content-section {
+                padding: 2.5rem;
+            }
+
+            .featured-detail-label {
+                min-width: 150px;
+                font-size: 0.85rem;
+            }
+
+            .featured-detail-value {
+                font-size: 1rem;
+            }
+
+            .featured-project-button {
+                padding: 1rem 2.5rem;
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1493,6 +1721,39 @@
             .project-card-title-section {
                 padding: 1rem 0;
             }
+
+            .featured-project-image-section {
+                height: 300px;
+            }
+
+            .featured-project-content-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .featured-project-title {
+                font-size: 1.75rem;
+            }
+
+            .featured-project-tag {
+                font-size: 0.75rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .featured-detail-label {
+                min-width: 130px;
+                font-size: 0.8rem;
+            }
+
+            .featured-detail-value {
+                font-size: 0.95rem;
+            }
+
+            .featured-project-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.85rem;
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         .navbar-logo{
@@ -1512,7 +1773,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about-us/">About Us</a></li>
-                <li><a href="#plans">Projects</a></li>
+                <li><a href="./projects/">Projects</a></li>
                 <li><a href="./contact-us/">
                     <button class="cta-button">Contact Us</button>
                 </a></li>
@@ -1547,13 +1808,13 @@
 
         <div class="hero-content">
             <!-- <p class="hero-subtitle">OLD MADRAS ROAD, BENGALURU</p> -->
-            <h1 class="hero-title">Vijayasri <span></span></h1>
-            <p class="hero-description">3 BHK Private Garden Residences.</p>
+            <!-- <h1 class="hero-title">Vijayasri <span></span></h1> -->
+            <!-- <p class="hero-description">3 BHK Private Garden Residences.</p> -->
             <!-- <p class="hero-features">No common walls. 4-Sided Open. 100% Vastu Compliant.</p> -->
-            <div class="hero-buttons">
+            <!-- <div class="hero-buttons">
                 <a href="#" class="btn-primary">Download Brochure</a>
                 <a href="#" class="btn-secondary">Book a Site Visit</a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -1620,6 +1881,7 @@
     </section>
 
     
+    
     <!-- Projects Section -->
     <section class="projects-showcase-section">
         <div class="projects-showcase-wrapper">
@@ -1639,7 +1901,12 @@
                 </nav>
             </div>
 
-            <!-- Projects Grid Container -->
+            <!-- Featured Project Container (for Ongoing) -->
+            <div class="featured-project-container" id="featuredProjectContainer">
+                <!-- Featured project will be dynamically inserted here -->
+            </div>
+
+            <!-- Projects Grid Container (for Completed & Upcoming) -->
             <div class="projects-display-grid" id="projectsDisplayGrid">
                 <!-- Projects will be dynamically inserted here -->
             </div>
@@ -1887,7 +2154,7 @@
                 <!-- Left Section - Company Information -->
                 <div class="footer-left">
                     <div class="footer-logo-wrapper">
-                        <img src="../components/Vijaysree-logo copy.png" alt="Vijayasri Green Homes" class="footer-logo">
+                        <img src="./components/Vijaysree-logo copy.png" alt="Vijayasri Green Homes" class="footer-logo">
                     </div>
                     <p class="footer-description">
                         Built on innovation, leadership and trust, Vijayasri Green Homes is one of the South India's leading developers and builders with property management.
@@ -2234,134 +2501,266 @@
                     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
                     totalArea: '5.75 ACRES',
                     plotted: '87',
-                    approved: 'BMRDA',
-                    location: 'CHANDAPURA'
+                    approved: 'ONGOING',
+                    location: 'BANGALORE',
+                    micrositeUrl: 'https://carpediemvillas.com/' // Add your microsite URL here
                 }
             ],
             completed: [
                 {
-                    name: 'Subha Belgravia',
+                    name: 'VINTAGE',
                     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
-                    totalArea: '3.2 ACRES',
-                    plotted: '52',
-                    approved: 'BMRDA',
-                    location: 'WHITEFIELD'
+                    totalArea: '76',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2008',
+                    location: 'BANGALORE'
                 },
                 {
-                    name: 'Subha Essence',
+                    name: 'VIJAYASRI LAPIS LAZULI',
                     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
-                    totalArea: '4.5 ACRES',
-                    plotted: '68',
-                    approved: 'BDA',
-                    location: 'ELECTRONIC CITY'
+                    totalArea: '64',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2009',
+                    location: 'BANGALORE'
                 },
                 {
-                    name: 'Subha Elan',
+                    name: 'VIJAYASRI GOLDEN ORCHIDS',
                     image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop',
-                    totalArea: '6.8 ACRES',
-                    plotted: '95',
-                    approved: 'BMRDA',
-                    location: 'SARJAPUR ROAD'
+                    totalArea: '80',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2010',
+                    location: 'BANGALORE'
                 },
                 {
-                    name: 'Subha Venus Signature',
+                    name: 'VIJAYASRI ELIXIR',
                     image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop',
-                    totalArea: '2.9 ACRES',
-                    plotted: '42',
-                    approved: 'BBMP',
-                    location: 'HENNUR'
+                    totalArea: '171',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2013',
+                    location: 'BANGALORE'
                 },
                 {
-                    name: 'Subha Nandhana',
+                    name: 'ROYAL FORTE',
                     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop',
-                    totalArea: '5.1 ACRES',
-                    plotted: '73',
-                    approved: 'BMRDA',
-                    location: 'KANAKAPURA ROAD'
+                    totalArea: '20',
+                    plotted: '3BHK',
+                    approved: '2000',
+                    location: 'HYDERABAD'
                 },
                 {
-                    name: 'Subha Tranquil',
+                    name: 'VIJAYASRI ENCLAVE',
                     image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop',
-                    totalArea: '3.7 ACRES',
-                    plotted: '58',
-                    approved: 'BDA',
-                    location: 'MYSORE ROAD'
+                    totalArea: '16',
+                    plotted: '2BHK',
+                    approved: '2002',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI SHANTHI RESIDENCY',
+                    image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D',
+                    totalArea: '12',
+                    plotted: '2BHK',
+                    approved: '2002',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI VASISTA SADANAM',
+                    image: 'https://media.istockphoto.com/id/1188794534/photo/canadian-house-in-montreals-suburbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=l-tOOdnH3pnS3j7kZXEF398iN6adS8PleT0pJmnDtqY=',
+                    totalArea: '19',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2004',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI NIVAS',
+                    image: 'https://plus.unsplash.com/premium_photo-1661779601614-9206e0451077?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D',
+                    totalArea: '17',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2004',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI SURABHI ARCADE',
+                    image: 'https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '20',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2005',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI NILAYAM ',
+                    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '12',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2003',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'DIAMOND PALACE',
+                    image: 'https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '76',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'C.B. EASTERN HOMES BLOCK A',
+                    image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '21',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'C.B EASTERN HOMES BLOCK B',
+                    image: 'https://plus.unsplash.com/premium_photo-1661963177937-c0bf63f55d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D',
+                    totalArea: '16',
+                    plotted: '2BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI GREEN HOMES',
+                    image: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '42',
+                    plotted: '2BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI DACHEPALLY ENCLAVE',
+                    image: 'https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '24',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI ROYAL CREST',
+                    image: 'https://plus.unsplash.com/premium_photo-1725408060526-9ce882f286f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8',
+                    totalArea: '20',
+                    plotted: '2BHK',
+                    approved: '2008',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI MIDAS TOUCH',
+                    image: 'https://media.istockphoto.com/id/1309642021/photo/beautiful-living-room-and-kitchen-in-new-luxury-home-with-waterfall-island-pendant-lights-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=XmVbwlD7o08GvuVvJIPutThwvWGN3hmFSqYWwLOB19s=',
+                    totalArea: '72',
+                    plotted: '3BHK',
+                    approved: '2010',
+                    location: 'HYDERABAD'
                 }
             ],
             upcoming: [
                 {
-                    name: 'Subha Paradise',
-                    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop',
-                    totalArea: '7.2 ACRES',
-                    plotted: '102',
-                    approved: 'BMRDA',
-                    location: 'DEVANAHALLI'
+                    name: 'C.B. EASTERN HOMES BLOCK A',
+                    image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '21',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
                 },
                 {
-                    name: 'Subha Grandeur',
-                    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop',
-                    totalArea: '4.8 ACRES',
-                    plotted: '71',
-                    approved: 'BMRDA',
-                    location: 'HOSUR ROAD'
+                    name: 'C.B EASTERN HOMES BLOCK B',
+                    image: 'https://plus.unsplash.com/premium_photo-1661963177937-c0bf63f55d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D',
+                    totalArea: '16',
+                    plotted: '2BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
                 },
                 {
-                    name: 'Subha Elite',
-                    image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop',
-                    totalArea: '5.5 ACRES',
-                    plotted: '82',
-                    approved: 'BDA',
-                    location: 'BANNERGHATTA ROAD'
+                    name: 'VIJAYASRI GREEN HOMES',
+                    image: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '42',
+                    plotted: '2BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
                 },
                 {
-                    name: 'Subha Harmony',
-                    image: 'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&h=600&fit=crop',
-                    totalArea: '3.4 ACRES',
-                    plotted: '55',
-                    approved: 'BBMP',
-                    location: 'THANISANDRA'
+                    name: 'VIJAYASRI DACHEPALLY ENCLAVE',
+                    image: 'https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '24',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
                 },
                 {
-                    name: 'Subha Prestige',
-                    image: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop',
-                    totalArea: '6.3 ACRES',
-                    plotted: '89',
-                    approved: 'BMRDA',
-                    location: 'JIGANI'
+                    name: 'VIJAYASRI ROYAL CREST',
+                    image: 'https://plus.unsplash.com/premium_photo-1725408060526-9ce882f286f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8',
+                    totalArea: '20',
+                    plotted: '2BHK',
+                    approved: '2008',
+                    location: 'HYDERABAD'
                 },
                 {
-                    name: 'Subha Serenity',
-                    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
-                    totalArea: '4.1 ACRES',
-                    plotted: '64',
-                    approved: 'BMRDA',
-                    location: 'YELAHANKA'
-                },
-                {
-                    name: 'Subha Oasis',
-                    image: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&h=600&fit=crop',
-                    totalArea: '8.5 ACRES',
-                    plotted: '115',
-                    approved: 'BDA',
-                    location: 'TUMKUR ROAD'
+                    name: 'VIJAYASRI MIDAS TOUCH',
+                    image: 'https://media.istockphoto.com/id/1309642021/photo/beautiful-living-room-and-kitchen-in-new-luxury-home-with-waterfall-island-pendant-lights-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=XmVbwlD7o08GvuVvJIPutThwvWGN3hmFSqYWwLOB19s=',
+                    totalArea: '72',
+                    plotted: '3BHK',
+                    approved: '2010',
+                    location: 'HYDERABAD'
                 }
             ]
         };
 
         // Get DOM elements
+        const featuredProjectContainer = document.getElementById('featuredProjectContainer');
         const projectsDisplayGrid = document.getElementById('projectsDisplayGrid');
         const projectsTabItems = document.querySelectorAll('.projects-tab-item');
 
-        // Function to render projects
-        function renderProjectsDisplay(category) {
+        
+        // <span class="featured-project-tag">Current Project</span>
+
+        // Function to render featured project (for ongoing)
+        function renderFeaturedProject(project) {
+            featuredProjectContainer.innerHTML = `
+                <div class="featured-project-wrapper">
+                    <div class="featured-project-image-section">
+                        <img src="${project.image}" alt="${project.name}" class="featured-project-image">
+                    </div>
+                    <div class="featured-project-content-section">
+                        <h3 class="featured-project-title">${project.name}</h3>
+                        
+                        <div class="featured-project-details">
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">No. of Plottes</span>
+                                <span class="featured-detail-value">${project.totalArea}</span>
+                            </div>
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">Plottes type</span>
+                                <span class="featured-detail-value">${project.plotted}</span>
+                            </div>
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">Completed year</span>
+                                <span class="featured-detail-value">${project.approved}</span>
+                            </div>
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">Location</span>
+                                <span class="featured-detail-value">${project.location}</span>
+                            </div>
+                        </div>
+
+                        <div class="featured-project-cta">
+                            <a href="${project.micrositeUrl}" class="featured-project-button">
+                                <span>View Project Details</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to render projects grid (for completed & upcoming)
+        function renderProjectsGrid(category) {
             const projectsList = projectsDataCollection[category];
             
             // Clear existing content
             projectsDisplayGrid.innerHTML = '';
-            
-            // Remove animation class
-            projectsDisplayGrid.style.opacity = '0';
-            projectsDisplayGrid.style.transform = 'translateY(30px)';
             
             // Add projects
             projectsList.forEach(project => {
@@ -2373,13 +2772,13 @@
                         <img src="${project.image}" alt="${project.name}" class="project-card-main-image">
                         <div class="project-card-hover-overlay">
                             <p class="project-overlay-detail">
-                                <span class="project-overlay-label">Total Area:</span> ${project.totalArea}
+                                <span class="project-overlay-label">No. of Plotted Villas:</span> ${project.totalArea}
                             </p>
                             <p class="project-overlay-detail">
-                                <span class="project-overlay-label">No. of Plotted Villas:</span> ${project.plotted}
+                                <span class="project-overlay-label">Plotted Tpyes:</span> ${project.plotted}
                             </p>
                             <p class="project-overlay-detail">
-                                <span class="project-overlay-label">Approved By:</span> ${project.approved}
+                                <span class="project-overlay-label">Completed year:</span> ${project.approved}
                             </p>
                             <p class="project-overlay-detail">
                                 <span class="project-overlay-label">Location:</span> ${project.location}
@@ -2393,12 +2792,33 @@
                 
                 projectsDisplayGrid.appendChild(projectCard);
             });
+        }
+
+        // Function to handle display based on category
+        function displayProjects(category) {
+            // Reset animations
+            featuredProjectContainer.style.opacity = '0';
+            projectsDisplayGrid.style.opacity = '0';
             
-            // Trigger animation
             setTimeout(() => {
-                projectsDisplayGrid.style.opacity = '1';
-                projectsDisplayGrid.style.transform = 'translateY(0)';
-            }, 50);
+                if (category === 'ongoing') {
+                    // Show featured layout for ongoing
+                    featuredProjectContainer.classList.add('active');
+                    projectsDisplayGrid.classList.remove('active');
+                    renderFeaturedProject(projectsDataCollection.ongoing[0]);
+                } else {
+                    // Show grid layout for completed and upcoming
+                    featuredProjectContainer.classList.remove('active');
+                    projectsDisplayGrid.classList.add('active');
+                    renderProjectsGrid(category);
+                }
+                
+                // Trigger animation
+                setTimeout(() => {
+                    featuredProjectContainer.style.opacity = '1';
+                    projectsDisplayGrid.style.opacity = '1';
+                }, 50);
+            }, 100);
         }
 
         // Tab click handlers
@@ -2410,14 +2830,14 @@
                 // Add active class to clicked tab
                 this.classList.add('projects-tab-active');
                 
-                // Get category and render projects
+                // Get category and display projects
                 const category = this.getAttribute('data-project-category');
-                renderProjectsDisplay(category);
+                displayProjects(category);
             });
         });
 
-        // Initial render - show ongoing projects
-        renderProjectsDisplay('ongoing');
+        // Initial render - show ongoing project
+        displayProjects('ongoing');
     </script>
 
 <script src="./contact-us/footer/script.js"></script>

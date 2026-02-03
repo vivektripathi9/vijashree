@@ -58,7 +58,7 @@
 }
 
 .navbar.scrolled .nav-links a {
-    color: var(--text-primary);
+    color: black;
 }
 
 .nav-links a::after {
