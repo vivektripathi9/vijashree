@@ -13,8 +13,30 @@
     <link rel="stylesheet" href="contact-form/styles.css">
     <link rel="stylesheet" href="contact-info/styles.css">
     <link rel="stylesheet" href="footer/styles.css">
+    <link rel="stylesheet" href="../home/navbar.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="../components/Vijaysree-logo copy.png" alt="Navbar logo" class="navbar-logo"> 
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about-us/">About Us</a></li>
+                <li><a href="#plans">Projects</a></li>
+                <li><a href="../contact-us/">
+                    <button class="cta-button">Contact Us</button>
+                </a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
     <div class="contact-us-container">
         <!-- Contact Form Section -->
         <section class="contact-form-section">
@@ -197,12 +219,12 @@
                         <div class="form-group">
                             <textarea id="footerMessage" name="message" placeholder="Message" class="form-textarea" rows="4" required></textarea>
                         </div>
-                        <div class="form-group form-group-checkbox">
+                        <!-- <div class="form-group form-group-checkbox">
                             <input type="checkbox" id="footerAuthorization" name="authorization" class="form-checkbox" required>
                             <label for="footerAuthorization" class="checkbox-label">
                                 I authorize Vijayasri Green Homes and its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call. This will override DND/NDNC.
                             </label>
-                        </div>
+                        </div> -->
                         <button type="submit" class="form-submit-btn">SUBMIT</button>
                     </form>
                 </div>
@@ -224,5 +246,6 @@
     <!-- Scripts -->
     <script src="contact-form/script.js"></script>
     <script src="footer/script.js"></script>
+    <script src="../home/navbar.js"></script>
 </body>
 </html>

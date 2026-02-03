@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijayasri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-light: #f8f8f8;
+            --accent-gold: #2C6C36;
+            --text-primary: #2c2c2c;
+            --text-secondary: #666666;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            /* d4a574 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            background: var(--primary-light);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            transition: var(--transition-smooth);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled .logo {
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            padding: 0.75rem 1.8rem;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: 500;
+        }
+
+        .navbar.scrolled .cta-button {
+            border-color: var(--primary-dark);
+            color: var(--primary-dark);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: white;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 28px;
+            height: 2px;
+            background: white;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled .mobile-toggle span {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section with Slider */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-family: "Sora", sans-serif;
+            font-size: 5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .hero-features {
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold);
+            color: white;
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            font-weight: 500;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Slider Navigation */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1.5rem 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(5px);
+        }
+
+        .slider-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .slider-nav.prev {
+            left: 2rem;
+        }
+
+        .slider-nav.next {
+            right: 2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            width: 100%;
+            height: 550px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-gold);
+            z-index: -1;
+        }
+
+        .about-content {
+            padding: 2rem 0;
+        }
+
+        .about-label {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-family: "Sora", sans-serif;
+            font-weight: 500;
+        }
+
+        .about-title {
+            font-family: "Sora", sans-serif;
+            font-size: 2.8rem;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .about-text {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .about-cta {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--primary-dark);
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            font-weight: 500;
+        }
+
+        .about-cta:hover {
+            background: var(--accent-gold);
+        }
+
+        /* Legacy Section */
+        .legacy-section {
+            padding: 6rem 5%;
+            background: var(--primary-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legacy-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(212, 165, 116, 0) 70%);
+            pointer-events: none;
+        }
+
+        .legacy-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .legacy-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .legacy-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .legacy-header {
+            max-width: 600px;
+        }
+
+        .legacy-label {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-family: "Sora", sans-serif;
+            font-weight: 500;
+        }
+
+        .legacy-title {
+            font-family: "Sora", sans-serif;
+            font-size: 2.3rem;
+            line-height: 1.2;
+            font-weight: 400;
+            color: white;
+        }
+
+        .legacy-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem 2rem;
+        }
+
+        .stat-item {
+            text-align: left;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .stat-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-family: "Sora", sans-serif;
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1;
+            color: var(--accent-gold);
+            display: inline-block;
+        }
+
+        .stat-symbol {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--accent-gold);
+            display: inline-block;
+            margin-left: 0.3rem;
+        }
+
+        .stat-label {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-weight: 400;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .legacy-image {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .legacy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .legacy-image::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-gold);
+            z-index: -1;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(212, 165, 116, 0.3) 50%, 
+                transparent 100%);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .why-choose-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-choose-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* gap: 2rem 2rem; */
+            /* margin-top: 4rem; */
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            transition: var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .feature-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: scale(1.1);
+            color: var(--primary-dark);
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            line-height: 1.3;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .feature-text {
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 350px;
+            margin: 0 auto;
+            font-family: "Manrope", sans-serif;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 4rem 5%;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .testimonials-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .testimonial-nav-btn {
+            width: 46px;
+            height: 46px;
+            border: 2px solid var(--primary-dark);
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--primary-dark);
+        }
+
+        .testimonial-nav-btn:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .testimonial-nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        .testimonials-slider-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-card {
+            min-width: calc(50% - 1rem);
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            transition: var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .testimonial-position {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .testimonial-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+        }
+
+        .testimonial-text {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-style: italic;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 0.3rem;
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 5% 0;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            max-width: 450px;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .footer-logo-img{
+            height: 60px;
+            width: 70px;
+        }
+
+        .footer-tagline {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            padding-top: 0.5rem;
+        }
+
+        .footer-heading {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+            letter-spacing: 0.5px;
+            font-family: "Sora", sans-serif;
+        }
+
+        .footer-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-menu a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            display: inline-block;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .footer-menu a:hover {
+            color: var(--accent-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-contact {
+            padding-top: 0.5rem;
+        }
+
+        .footer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-input {
+            padding: 0.5rem 0.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23d4a574' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 3rem;
+        }
+
+        .form-select option {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-submit {
+            padding: 0.7rem 1rem;
+            background: var(--accent-gold);
+            color: white;
+            border: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-submit:hover {
+            background: #c49563;
+            transform: translateY(-2px);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .footer-bottom {
+            /* background: rgba(0, 0, 0, 0.2); */
+        }
+
+        .footer-bottom-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transition: right 0.4s ease;
+                padding: 2rem;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-features {
+                font-size: 0.85rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .slider-nav {
+                padding: 1rem 0.7rem;
+                font-size: 1.5rem;
+            }
+
+            .slider-nav.prev {
+                left: 1rem;
+            }
+
+            .slider-nav.next {
+                right: 1rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .about-title {
+                font-size: 2.5rem;
+            }
+
+            .about-section {
+                padding: 5rem 5%;
+            }
+
+            .legacy-section {
+                padding: 5rem 5%;
+            }
+
+            .legacy-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .legacy-image {
+                height: 400px;
+                order: -1;
+            }
+
+            .legacy-title {
+                font-size: 2rem;
+            }
+
+            .legacy-stats {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .stat-item {
+                min-width: auto;
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+            }
+
+            .stat-symbol {
+                font-size: 2.2rem;
+            }
+
+            .why-choose-section {
+                padding: 5rem 5%;
+            }
+
+            .why-choose-title {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .feature-item {
+                padding: 2rem 1rem;
+            }
+
+            .testimonials-section {
+                padding: 5rem 5%;
+            }
+
+            .testimonials-header {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .testimonials-title {
+                font-size: 2.5rem;
+            }
+
+            .testimonial-card {
+                min-width: 100%;
+                padding: 2.5rem;
+            }
+
+            .testimonial-heading {
+                font-size: 1.3rem;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
+            .footer-section {
+                padding: 4rem 5% 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .navbar {
+                padding: 1rem 5%;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 0.9rem 2rem;
+                font-size: 0.85rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .about-text {
+                font-size: 0.95rem;
+            }
+
+            .legacy-title {
+                font-size: 1.6rem;
+            }
+
+            .legacy-header {
+                margin-bottom: 4rem;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .stat-symbol {
+                font-size: 2rem;
+            }
+
+            .why-choose-title {
+                font-size: 2rem;
+            }
+
+            .feature-title {
+                font-size: 1.2rem;
+            }
+
+            .testimonials-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-nav-btn {
+                width: 48px;
+                height: 48px;
+            }
+
+            .testimonial-card {
+                padding: 2rem;
+            }
+
+            .testimonial-avatar {
+                width: 60px;
+                height: 60px;
+            }
+
+            .testimonial-name {
+                font-size: 1.1rem;
+            }
+
+            .testimonial-heading {
+                font-size: 1.2rem;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+            }
+
+            .footer-logo {
+                font-size: 1.8rem;
+            }
+
+            .footer-tagline {
+                font-size: 1rem;
+            }
+
+            .footer-heading {
+                font-size: 1.2rem;
+            }
+
+            .form-input {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        /* Projects Section */
+        .projects-showcase-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .projects-showcase-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-showcase-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .projects-showcase-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Tab Navigation */
+        .projects-tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            position: relative;
+        }
+
+        .projects-tab-item {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding-bottom: 0.75rem;
+            background: none;
+            border: none;
+            font-family: "Sora", sans-serif;
+        }
+
+        .projects-tab-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projects-tab-item:hover {
+            color: var(--primary-dark);
+        }
+
+        .projects-tab-item.projects-tab-active {
+            color: var(--primary-dark);
+        }
+
+        .projects-tab-item.projects-tab-active::after {
+            width: 100%;
+        }
+
+        /* Projects Grid */
+        .projects-display-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: projectsFadeIn 0.6s ease forwards;
+        }
+
+        @keyframes projectsFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Project Card */
+        .project-display-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--primary-light);
+        }
+
+        .project-card-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            overflow: hidden;
+        }
+
+        .project-card-main-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-display-card:hover .project-card-main-image {
+            transform: scale(1.08);
+        }
+
+        /* Hover Overlay */
+        .project-card-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 42, 78, 0.92);
+            /* background: rgba(255, 255, 255, 0.283); */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        .project-display-card:hover .project-card-hover-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay-detail {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .project-overlay-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-overlay-label {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* Project Title Below Image */
+        .project-card-title-section {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .project-card-display-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: "Manrope", sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .projects-display-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .projects-showcase-title {
+                font-size: 3rem;
+            }
+
+            .projects-tab-navigation {
+                gap: 3rem;
+            }
+
+            .projects-tab-item {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-showcase-section {
+                padding: 5rem 5%;
+            }
+
+            .projects-showcase-title {
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .projects-tab-navigation {
+                gap: 2rem;
+            }
+
+            .projects-tab-item {
+                font-size: 0.9rem;
+                letter-spacing: 1.5px;
+            }
+
+            .projects-display-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .project-card-display-title {
+                font-size: 1.1rem;
+            }
+
+            .project-overlay-detail {
+                font-size: 0.9rem;
+            }
+
+            .project-card-hover-overlay {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-showcase-title {
+                font-size: 2rem;
+            }
+
+            .projects-tab-navigation {
+                gap: 1.5rem;
+            }
+
+            .projects-tab-item {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+
+            .project-card-display-title {
+                font-size: 1rem;
+            }
+
+            .project-card-title-section {
+                padding: 1rem 0;
+            }
+        }
+
+        .navbar-logo{
+            height: 50px;
+            width: 60px;
+        }
+    </style>
+    <link rel="stylesheet" href="./contact-us/footer/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <img src="./components/Vijaysree-logo copy.png" alt="Navbar logo" class="navbar-logo"> 
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about-us/">About Us</a></li>
+                <li><a href="#plans">Projects</a></li>
+                <li><a href="../contact-us/">
+                    <button class="cta-button">Contact Us</button>
+                </a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero-section">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&h=1080&fit=crop" alt="Luxury Residence 1">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop" alt="Luxury Residence 2">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1080&fit=crop" alt="Luxury Residence 3">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&h=1080&fit=crop" alt="Luxury Residence 4">
+            </div>
+        </div>
+
+        <button class="slider-nav prev" id="prevBtn">‹</button>
+        <button class="slider-nav next" id="nextBtn">›</button>
+
+        <div class="hero-content">
+            <!-- <p class="hero-subtitle">OLD MADRAS ROAD, BENGALURU</p> -->
+            <h1 class="hero-title">Vijayasri <span></span></h1>
+            <p class="hero-description">3 BHK Private Garden Residences.</p>
+            <!-- <p class="hero-features">No common walls. 4-Sided Open. 100% Vastu Compliant.</p> -->
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Download Brochure</a>
+                <a href="#" class="btn-secondary">Book a Site Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop" alt="Building Excellence">
+            </div>
+            <div class="about-content">
+                <p class="about-label">Welcome to Vijayasri Green Homes</p>
+                <h2 class="about-title">Where Innovation, Sustainability, & Luxury Meet.</h2>
+                <p class="about-text">
+                    Vijayasri Green Homes has been steadily progressing since its inception, earning a strong reputation in the competitive real estate industry. Each project has contributed to continuous learning, improved quality, and a firm commitment to excellence.
+                </p>
+                <p class="about-text">
+                    Guided by diligence, dedication, and customer-focused values, Vijayasri has carved a distinct niche for itself. Its projects reflect thoughtful planning, superior execution, and lasting value, resulting in customer trust and satisfaction.
+                </p>
+                <p class="about-text">
+                    From concept to completion, Vijayasri delivers well-designed spaces that combine aesthetics, functionality, Vaastu compliance, and optimal space utilization, supported by experienced professionals and strong financial capability.
+                </p>
+                <a href="#" class="about-cta">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Legacy Section -->
+    <section class="legacy-section" id="legacy">
+        <div class="legacy-container">
+            <div class="legacy-content">
+                <div class="legacy-left">
+                    <div class="legacy-header">
+                        <p class="legacy-label">OUR LEGACY</p>
+                        <h2 class="legacy-title">With 25+ years of expertise, we are laying the foundation for your dreams with an unwavering commitment to perfection.</h2>
+                    </div>
+                    <div class="legacy-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="75">0</div>
+                            <div class="stat-symbol">+</div>
+                            <div class="stat-label">Residential Projects<br>Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0</div>
+                            <div class="stat-symbol">M+</div>
+                            <div class="stat-label">SQFT<br>Built</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-symbol">M+</div>
+                            <div class="stat-label">SQFT Upcoming<br>Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0</div>
+                            <div class="stat-symbol">k</div>
+                            <div class="stat-label">Happy<br>Families</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legacy-image">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=900&fit=crop" alt="Legacy Building">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Projects Section -->
+    <section class="projects-showcase-section">
+        <div class="projects-showcase-wrapper">
+            <div class="projects-showcase-header">
+                <h2 class="projects-showcase-title">Projects</h2>
+                
+                <nav class="projects-tab-navigation">
+                    <button class="projects-tab-item projects-tab-active" data-project-category="ongoing">
+                        Ongoing
+                    </button>
+                    <button class="projects-tab-item" data-project-category="completed">
+                        Completed
+                    </button>
+                    <button class="projects-tab-item" data-project-category="upcoming">
+                        Upcoming
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Projects Grid Container -->
+            <div class="projects-display-grid" id="projectsDisplayGrid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section" id="why-choose">
+        <div class="why-choose-container">
+            <h2 class="why-choose-title">Why Choose Us</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/>
+                            <path d="M12 8v8m-4-4h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Integrity</h3>
+                    <p class="feature-text">We conduct every aspect of our business with honesty, transparency, and strong ethical values, ensuring long-term relationships with our customers and partners.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="10" r="3"/>
+                            <path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Growth-Oriented</h3>
+                    <p class="feature-text">Vijayasri is driven by continuous improvement—learning from every project and evolving with changing market needs to deliver better value and quality.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2l9 4.5v9L12 22l-9-6.5v-9L12 2z"/>
+                            <path d="M12 22V12m0 0L3 6.5M12 12l9-5.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Trust-Centric</h3>
+                    <p class="feature-text">Customer trust is at the heart of everything we do. Our commitment to quality, timely delivery, and clear communication has earned us lasting confidence and loyalty.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Sustainability</h3>
+                    <p class="feature-text">We are committed to responsible development by creating environmentally conscious spaces that balance modern living with respect for nature.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            <circle cx="12" cy="16" r="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Innovation-First</h3>
+                    <p class="feature-text">By embracing innovative design, modern construction practices, and smart planning, Vijayasri delivers future-ready homes that stand the test of time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">What Clients Say About Us</h2>
+                <div class="testimonials-nav">
+                    <button class="testimonial-nav-btn testimonial-prev" aria-label="Previous testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="testimonial-nav-btn testimonial-next" aria-label="Next testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="testimonials-slider-wrapper">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Rajesh Kumar" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Rajesh Kumar</h3>
+                                <p class="testimonial-position">Business Owner</p>
+                            </div>
+                        </div>
+                        <h4 class="testimonial-heading">Outstanding Quality!</h4>
+                        <p class="testimonial-text">"From the initial consultation to the final handover, Vijayasri exceeded our expectations. The attention to detail and commitment to quality is unmatched. Our home is a masterpiece!"</p>
+                        <div class="testimonial-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Priya Sharma" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Priya Sharma</h3>
+                                <p class="testimonial-position">Marketing Director</p>
+                            </div>
+                        </div>
+                        <h4 class="testimonial-heading">Best Investment Decision!</h4>
+                        <p class="testimonial-text">"Purchasing our apartment from Vijayasri was the best decision we made. The modern design, prime location, and world-class amenities have transformed our lifestyle completely."</p>
+                        <div class="testimonial-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Arun Patel" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Arun Patel</h3>
+                                <p class="testimonial-position">IT Professional</p>
+                            </div>
+                        </div>
+                        <h4 class="testimonial-heading">Exceptional Service!</h4>
+                        <p class="testimonial-text">"The team at Vijayasri provided exceptional service throughout the entire process. They were transparent, professional, and delivered everything they promised. Highly recommended!"</p>
+                        <div class="testimonial-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Sneha Reddy" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h3 class="testimonial-name">Sneha Reddy</h3>
+                                <p class="testimonial-position">Doctor</p>
+                            </div>
+                        </div>
+                        <h4 class="testimonial-heading">Dream Home Delivered!</h4>
+                        <p class="testimonial-text">"Vijayasri turned our dream into reality. The construction quality, timely delivery, and post-sales support have been outstanding. We couldn't be happier with our new home!"</p>
+                        <div class="testimonial-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <!-- <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                
+                <div class="footer-brand">
+                    <a href="./index.html" class="footer-logo">
+                        <img src="./components/Vijaysree-logo copy.png" alt="" class="footer-logo-img">
+                    </a>
+                    <p class="footer-tagline">Where Innovation, Sustainability, & Luxury Meet.</p>
+                    <p class="footer-description">Vijayasri Green Homes has been steadily progressing since its inception, earning a strong reputation in the competitive real estate industry.</p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="footer-links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#about">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#legacy">Projects</a></li>
+                        <li><a href="#why-choose">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <form class="footer-form" id="footerContactForm">
+                        <div class="form-row">
+                            <input type="text" placeholder="Name" class="form-input" required>
+                            <input type="email" placeholder="Email" class="form-input" required>
+                        </div>
+                        <div class="form-row">
+                            <select class="form-input form-select" required>
+                                <option value="">Country Code</option>
+                                <option value="+91">+91 (India)</option>
+                                <option value="+1">+1 (USA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+61">+61 (Australia)</option>
+                            </select>
+                            <input type="tel" placeholder="Contact No." class="form-input" required>
+                        </div>
+                        <textarea placeholder="Message" class="form-input form-textarea" rows="4" required></textarea>
+                        <button type="submit" class="form-submit">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>© 2026 All rights reserved. Vijayasri</p>
+            </div>
+        </div>
+    </footer> -->
+    
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-container">
+                <!-- Left Section - Company Information -->
+                <div class="footer-left">
+                    <div class="footer-logo-wrapper">
+                        <img src="../components/Vijaysree-logo copy.png" alt="Vijayasri Green Homes" class="footer-logo">
+                    </div>
+                    <p class="footer-description">
+                        Built on innovation, leadership and trust, Vijayasri Green Homes is one of the South India's leading developers and builders with property management.
+                    </p>
+                    <div class="footer-contact-info">
+                        <p class="contact-item">
+                            <span class="contact-label">Phone:</span> 
+                            <a href="tel:+91-7816000555" class="contact-link">+91-7816000555</a>
+                        </p>
+                        <p class="contact-item">
+                            <span class="contact-label">Email:</span> 
+                            <a href="mailto:info@vijayasrigreenhomes.com" class="contact-link">info@vijayasrigreenhomes.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Middle Section - Quick Links & Social Media -->
+                <div class="footer-middle">
+                    <h3 class="footer-heading">QUICK LINKS</h3>
+                    <nav class="footer-nav">
+                        <a href="../about-us/index.html" class="footer-link">About Us</a>
+                        <a href="#projects" class="footer-link">Projects</a>
+                        <a href="#privacy" class="footer-link">Privacy Policy</a>
+                        <a href="index.html" class="footer-link">Contact Us</a>
+                    </nav>
+                    <div class="social-media">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section - Contact Form -->
+                <div class="footer-right">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <form class="footer-contact-form" id="footerContactForm">
+                        <div class="form-group">
+                            <input type="text" id="footerName" name="name" placeholder="Name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="footerEmail" name="email" placeholder="Email" class="form-input" required>
+                        </div>
+                        <div class="form-group form-group-phone">
+                            <select id="footerCountryCode" name="countryCode" class="form-select">
+                                <option value="+91" selected>+91</option>
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                            </select>
+                            <input type="tel" id="footerPhone" name="phone" placeholder="Contact No." class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="footerMessage" name="message" placeholder="Message" class="form-textarea" rows="4" required></textarea>
+                        </div>
+                        <!-- <div class="form-group form-group-checkbox">
+                            <input type="checkbox" id="footerAuthorization" name="authorization" class="form-checkbox" required>
+                            <label for="footerAuthorization" class="checkbox-label">
+                                I authorize Vijayasri Green Homes and its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call. This will override DND/NDNC.
+                            </label>
+                        </div> -->
+                        <button type="submit" class="form-submit-btn">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Footer Bar -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Vijayasri Green Homes. All rights reserved.</p>
+                <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Hero Slider Functionality
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 4000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Event listeners for manual controls
+        nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+
+        // Pause on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+        // Start auto-slide
+        startAutoSlide();
+
+        // Counter Animation for Legacy Stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Trigger counter animation for stats
+                    if (entry.target.classList.contains('stat-item')) {
+                        const numberElement = entry.target.querySelector('.stat-number');
+                        const target = parseInt(numberElement.getAttribute('data-target'));
+                        animateCounter(numberElement, target);
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all stat items
+        document.querySelectorAll('.stat-item').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        // Observe all feature items with staggered delay
+        document.querySelectorAll('.feature-item').forEach((feature, index) => {
+            feature.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(feature);
+        });
+
+        // Testimonials Slider Functionality
+        const testimonialsTrack = document.querySelector('.testimonials-track');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const testimonialPrevBtn = document.querySelector('.testimonial-prev');
+        const testimonialNextBtn = document.querySelector('.testimonial-next');
+        
+        let currentTestimonialIndex = 0;
+        let testimonialCardsToShow = window.innerWidth > 968 ? 2 : 1;
+        const totalTestimonialCards = testimonialCards.length;
+
+        // Clone first and last cards for infinite loop
+        const firstClone = testimonialCards[0].cloneNode(true);
+        const lastClone = testimonialCards[totalTestimonialCards - 1].cloneNode(true);
+        
+        testimonialsTrack.appendChild(firstClone);
+        testimonialsTrack.insertBefore(lastClone, testimonialCards[0]);
+
+        function updateTestimonialCardsToShow() {
+            testimonialCardsToShow = window.innerWidth > 968 ? 2 : 1;
+        }
+
+        function moveTestimonialSlider(smooth = true) {
+            const cardWidth = testimonialCards[0].offsetWidth;
+            const gap = 32; // 2rem gap
+            const moveAmount = (cardWidth + gap) * (currentTestimonialIndex + 1);
+            
+            if (smooth) {
+                testimonialsTrack.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            } else {
+                testimonialsTrack.style.transition = 'none';
+            }
+            
+            testimonialsTrack.style.transform = `translateX(-${moveAmount}px)`;
+        }
+
+        function nextTestimonial() {
+            currentTestimonialIndex++;
+            moveTestimonialSlider();
+            
+            // Reset to first card when reaching the end
+            if (currentTestimonialIndex >= totalTestimonialCards) {
+                setTimeout(() => {
+                    currentTestimonialIndex = 0;
+                    moveTestimonialSlider(false);
+                }, 600);
+            }
+        }
+
+        function prevTestimonial() {
+            currentTestimonialIndex--;
+            moveTestimonialSlider();
+            
+            // Reset to last card when going before first
+            if (currentTestimonialIndex < 0) {
+                setTimeout(() => {
+                    currentTestimonialIndex = totalTestimonialCards - 1;
+                    moveTestimonialSlider(false);
+                }, 600);
+            }
+        }
+
+        testimonialNextBtn.addEventListener('click', nextTestimonial);
+        testimonialPrevBtn.addEventListener('click', prevTestimonial);
+
+        // Initialize position
+        moveTestimonialSlider(false);
+
+        // Auto-play testimonials
+        let testimonialAutoPlayInterval = setInterval(nextTestimonial, 5000);
+
+        // Pause on hover
+        const testimonialsSliderWrapper = document.querySelector('.testimonials-slider-wrapper');
+        testimonialsSliderWrapper.addEventListener('mouseenter', () => {
+            clearInterval(testimonialAutoPlayInterval);
+        });
+
+        testimonialsSliderWrapper.addEventListener('mouseleave', () => {
+            testimonialAutoPlayInterval = setInterval(nextTestimonial, 5000);
+        });
+
+        // Handle window resize for testimonials
+        window.addEventListener('resize', () => {
+            updateTestimonialCardsToShow();
+            moveTestimonialSlider(false);
+        });
+
+        // Footer Contact Form Handler
+        const footerContactForm = document.getElementById('footerContactForm');
+        footerContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(footerContactForm);
+            
+            // Show success message (you can replace this with actual form submission logic)
+            alert('Thank you for contacting us! We will get back to you soon.');
+            
+            // Reset form
+            footerContactForm.reset();
+            
+            // In production, you would send this data to your server:
+            // fetch('/api/contact', {
+            //     method: 'POST',
+            //     body: formData
+            // }).then(response => response.json())
+            //   .then(data => console.log(data));
+        });
+    </script>
+    <!-- projects js  -->
+
+    <script>
+        // Project Data
+        const projectsDataCollection = {
+            ongoing: [
+                {
+                    name: 'Carpediem Villas',
+                    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
+                    totalArea: '5.75 ACRES',
+                    plotted: '87',
+                    approved: 'BMRDA',
+                    location: 'CHANDAPURA'
+                }
+            ],
+            completed: [
+                {
+                    name: 'Subha Belgravia',
+                    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
+                    totalArea: '3.2 ACRES',
+                    plotted: '52',
+                    approved: 'BMRDA',
+                    location: 'WHITEFIELD'
+                },
+                {
+                    name: 'Subha Essence',
+                    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
+                    totalArea: '4.5 ACRES',
+                    plotted: '68',
+                    approved: 'BDA',
+                    location: 'ELECTRONIC CITY'
+                },
+                {
+                    name: 'Subha Elan',
+                    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop',
+                    totalArea: '6.8 ACRES',
+                    plotted: '95',
+                    approved: 'BMRDA',
+                    location: 'SARJAPUR ROAD'
+                },
+                {
+                    name: 'Subha Venus Signature',
+                    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop',
+                    totalArea: '2.9 ACRES',
+                    plotted: '42',
+                    approved: 'BBMP',
+                    location: 'HENNUR'
+                },
+                {
+                    name: 'Subha Nandhana',
+                    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop',
+                    totalArea: '5.1 ACRES',
+                    plotted: '73',
+                    approved: 'BMRDA',
+                    location: 'KANAKAPURA ROAD'
+                },
+                {
+                    name: 'Subha Tranquil',
+                    image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop',
+                    totalArea: '3.7 ACRES',
+                    plotted: '58',
+                    approved: 'BDA',
+                    location: 'MYSORE ROAD'
+                }
+            ],
+            upcoming: [
+                {
+                    name: 'Subha Paradise',
+                    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop',
+                    totalArea: '7.2 ACRES',
+                    plotted: '102',
+                    approved: 'BMRDA',
+                    location: 'DEVANAHALLI'
+                },
+                {
+                    name: 'Subha Grandeur',
+                    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop',
+                    totalArea: '4.8 ACRES',
+                    plotted: '71',
+                    approved: 'BMRDA',
+                    location: 'HOSUR ROAD'
+                },
+                {
+                    name: 'Subha Elite',
+                    image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop',
+                    totalArea: '5.5 ACRES',
+                    plotted: '82',
+                    approved: 'BDA',
+                    location: 'BANNERGHATTA ROAD'
+                },
+                {
+                    name: 'Subha Harmony',
+                    image: 'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=800&h=600&fit=crop',
+                    totalArea: '3.4 ACRES',
+                    plotted: '55',
+                    approved: 'BBMP',
+                    location: 'THANISANDRA'
+                },
+                {
+                    name: 'Subha Prestige',
+                    image: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&h=600&fit=crop',
+                    totalArea: '6.3 ACRES',
+                    plotted: '89',
+                    approved: 'BMRDA',
+                    location: 'JIGANI'
+                },
+                {
+                    name: 'Subha Serenity',
+                    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
+                    totalArea: '4.1 ACRES',
+                    plotted: '64',
+                    approved: 'BMRDA',
+                    location: 'YELAHANKA'
+                },
+                {
+                    name: 'Subha Oasis',
+                    image: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&h=600&fit=crop',
+                    totalArea: '8.5 ACRES',
+                    plotted: '115',
+                    approved: 'BDA',
+                    location: 'TUMKUR ROAD'
+                }
+            ]
+        };
+
+        // Get DOM elements
+        const projectsDisplayGrid = document.getElementById('projectsDisplayGrid');
+        const projectsTabItems = document.querySelectorAll('.projects-tab-item');
+
+        // Function to render projects
+        function renderProjectsDisplay(category) {
+            const projectsList = projectsDataCollection[category];
+            
+            // Clear existing content
+            projectsDisplayGrid.innerHTML = '';
+            
+            // Remove animation class
+            projectsDisplayGrid.style.opacity = '0';
+            projectsDisplayGrid.style.transform = 'translateY(30px)';
+            
+            // Add projects
+            projectsList.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-display-card';
+                
+                projectCard.innerHTML = `
+                    <div class="project-card-image-wrapper">
+                        <img src="${project.image}" alt="${project.name}" class="project-card-main-image">
+                        <div class="project-card-hover-overlay">
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Total Area:</span> ${project.totalArea}
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">No. of Plotted Villas:</span> ${project.plotted}
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Approved By:</span> ${project.approved}
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Location:</span> ${project.location}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-card-title-section">
+                        <h3 class="project-card-display-title">${project.name}</h3>
+                    </div>
+                `;
+                
+                projectsDisplayGrid.appendChild(projectCard);
+            });
+            
+            // Trigger animation
+            setTimeout(() => {
+                projectsDisplayGrid.style.opacity = '1';
+                projectsDisplayGrid.style.transform = 'translateY(0)';
+            }, 50);
+        }
+
+        // Tab click handlers
+        projectsTabItems.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                projectsTabItems.forEach(t => t.classList.remove('projects-tab-active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('projects-tab-active');
+                
+                // Get category and render projects
+                const category = this.getAttribute('data-project-category');
+                renderProjectsDisplay(category);
+            });
+        });
+
+        // Initial render - show ongoing projects
+        renderProjectsDisplay('ongoing');
+    </script>
+
+<script src="./contact-us/footer/script.js"></script>
+    
+</body>
+</html>
