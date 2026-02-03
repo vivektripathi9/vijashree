@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Section - Amogaya Adorit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home/navbar.css">
+    <link rel="stylesheet" href="../contact-us/footer/styles.css">
+    <style>
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-light: #f8f8f8;
+            --accent-gold: #d4a574;
+            --text-primary: #2c2c2c;
+            --text-secondary: #666666;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            color: var(--text-primary);
+            background: white;
+        }
+
+        /* Banner Section */
+        .hero-banner-section {
+            position: relative;
+            height: 75vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&h=900&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.7);
+            z-index: 1;
+        }
+
+        .hero-banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+        }
+
+        .hero-banner-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-banner-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bannerFadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-banner-subtitle {
+            font-family: "Manrope", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            animation: bannerFadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-banner-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            animation: bannerFadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .breadcrumb-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .breadcrumb-link:hover {
+            color: white;
+        }
+
+        .breadcrumb-separator {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .breadcrumb-current {
+            color: white;
+        }
+
+        @keyframes bannerFadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design for Banner */
+        @media(max-width: 1024px) {
+            .hero-banner-section {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .hero-banner-title {
+                font-size: 4rem;
+            }
+
+            .hero-banner-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .hero-banner-section {
+                height: 45vh;
+                min-height: 300px;
+                background-attachment: scroll;
+            }
+
+            .hero-banner-title {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-banner-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-banner-breadcrumb {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .hero-banner-section {
+                height: 40vh;
+                min-height: 280px;
+            }
+
+            .hero-banner-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-banner-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-banner-breadcrumb {
+                font-size: 0.8rem;
+                gap: 0.75rem;
+            }
+        }
+
+        /* Projects Section */
+        .projects-showcase-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .projects-showcase-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-showcase-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .projects-showcase-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        /* Tab Navigation */
+        .projects-tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            position: relative;
+        }
+
+        .projects-tab-item {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding-bottom: 0.75rem;
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .projects-tab-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projects-tab-item:hover {
+            color: var(--primary-dark);
+        }
+
+        .projects-tab-item.projects-tab-active {
+            color: var(--primary-dark);
+        }
+
+        .projects-tab-item.projects-tab-active::after {
+            width: 100%;
+        }
+
+        /* Featured Project Layout (for Ongoing) */
+        .featured-project-container {
+            display: none;
+            margin-top: 5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: projectsFadeIn 0.6s ease forwards;
+        }
+
+        .featured-project-container.active {
+            display: block;
+        }
+
+        .featured-project-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--primary-light);
+            overflow: hidden;
+        }
+
+        .featured-project-image-section {
+            position: relative;
+            width: 100%;
+            height: 405px;
+            overflow: hidden;
+        }
+
+        .featured-project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .featured-project-wrapper:hover .featured-project-image {
+            transform: scale(1.05);
+        }
+
+        .featured-project-content-section {
+            padding: 3rem 4rem 3rem 0;
+        }
+
+        .featured-project-tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .featured-project-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .featured-project-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .featured-project-detail-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-project-detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .featured-detail-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            min-width: 180px;
+        }
+
+        .featured-detail-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .featured-project-cta {
+            margin-top: 2.5rem;
+        }
+
+        .featured-project-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: var(--primary-dark);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-project-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-gold);
+            transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+
+        .featured-project-button:hover::before {
+            left: 0;
+        }
+
+        .featured-project-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-project-button svg {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-project-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Projects Grid (for Completed & Upcoming) */
+        .projects-display-grid {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: projectsFadeIn 0.6s ease forwards;
+        }
+
+        .projects-display-grid.active {
+            display: grid;
+        }
+
+        @keyframes projectsFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Project Card */
+        .project-display-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--primary-light);
+        }
+
+        .project-card-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            overflow: hidden;
+        }
+
+        .project-card-main-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-display-card:hover .project-card-main-image {
+            transform: scale(1.08);
+        }
+
+        /* Hover Overlay */
+        .project-card-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 42, 78, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        .project-display-card:hover .project-card-hover-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay-detail {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .project-overlay-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-overlay-label {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* Project Title Below Image */
+        .project-card-title-section {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .project-card-display-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 1200px) {
+            .featured-project-wrapper {
+                gap: 3rem;
+            }
+
+            .featured-project-image-section {
+                height: 500px;
+            }
+
+            .featured-project-title {
+                font-size: 2.5rem;
+            }
+
+            .featured-project-content-section {
+                padding: 2.5rem 3rem 2.5rem 0;
+            }
+        }
+
+        @media(max-width: 1024px) {
+            .projects-display-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .projects-showcase-title {
+                font-size: 3rem;
+            }
+
+            .projects-tab-navigation {
+                gap: 3rem;
+            }
+
+            .projects-tab-item {
+                font-size: 1rem;
+            }
+
+            .featured-project-wrapper {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .featured-project-image-section {
+                height: 400px;
+            }
+
+            .featured-project-content-section {
+                padding: 3rem;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .projects-showcase-section {
+                padding: 5rem 5%;
+            }
+
+            .projects-showcase-title {
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .projects-tab-navigation {
+                gap: 2rem;
+            }
+
+            .projects-tab-item {
+                font-size: 0.9rem;
+                letter-spacing: 1.5px;
+            }
+
+            .projects-display-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .project-card-display-title {
+                font-size: 1.1rem;
+            }
+
+            .project-overlay-detail {
+                font-size: 0.9rem;
+            }
+
+            .project-card-hover-overlay {
+                padding: 1.5rem;
+            }
+
+            .featured-project-title {
+                font-size: 2rem;
+            }
+
+            .featured-project-content-section {
+                padding: 2.5rem;
+            }
+
+            .featured-detail-label {
+                min-width: 150px;
+                font-size: 0.85rem;
+            }
+
+            .featured-detail-value {
+                font-size: 1rem;
+            }
+
+            .featured-project-button {
+                padding: 1rem 2.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .projects-showcase-title {
+                font-size: 2rem;
+            }
+
+            .projects-tab-navigation {
+                gap: 1.5rem;
+            }
+
+            .projects-tab-item {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+
+            .project-card-display-title {
+                font-size: 1rem;
+            }
+
+            .project-card-title-section {
+                padding: 1rem 0;
+            }
+
+            .featured-project-image-section {
+                height: 300px;
+            }
+
+            .featured-project-content-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .featured-project-title {
+                font-size: 1.75rem;
+            }
+
+            .featured-project-tag {
+                font-size: 0.75rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .featured-detail-label {
+                min-width: 130px;
+                font-size: 0.8rem;
+            }
+
+            .featured-detail-value {
+                font-size: 0.95rem;
+            }
+
+            .featured-project-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.85rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="logo">
+                <img src="../components/Vijaysree-logo copy.png" alt="Navbar logo" class="navbar-logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../about-us/">About Us</a>
+                </li>
+                <li>
+                    <a href="./index.html">Projects</a>
+                </li>
+                <li>
+                    <a href="../contact-us/">
+                        <button class="cta-button">Contact Us</button>
+                    </a>
+                </li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Banner Section -->
+    <section class="hero-banner-section">
+        <div class="hero-banner-overlay"></div>
+        <div class="hero-banner-content">
+            <div class="hero-banner-wrapper">
+                <h1 class="hero-banner-title">Our Projects</h1>
+                <!-- <p class="hero-banner-subtitle">Building Dreams, Creating Landmarks</p> -->
+                <div class="hero-banner-breadcrumb">
+                    <a href="../index.html" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section class="projects-showcase-section">
+        <div class="projects-showcase-wrapper">
+            <div class="projects-showcase-header">
+                <h2 class="projects-showcase-title">Projects</h2>
+
+                <nav class="projects-tab-navigation">
+                    <button class="projects-tab-item projects-tab-active" data-project-category="ongoing">
+                        Ongoing
+                    </button>
+                    <button class="projects-tab-item" data-project-category="completed">
+                        Completed
+                    </button>
+                    <button class="projects-tab-item" data-project-category="upcoming">
+                        Upcoming
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Featured Project Container (for Ongoing) -->
+            <div
+                class="featured-project-container" id="featuredProjectContainer"><!-- Featured project will be dynamically inserted here -->
+            </div>
+
+            <!-- Projects Grid Container (for Completed & Upcoming) -->
+            <div
+                class="projects-display-grid" id="projectsDisplayGrid"><!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div
+            class="footer-container">
+            <!-- Left Section - Company Information -->
+            <div class="footer-left">
+                <div class="footer-logo-wrapper">
+                    <img src="../components/Vijaysree-logo copy.png" alt="Vijayasri Green Homes" class="footer-logo">
+                </div>
+                <p class="footer-description">
+                    Built on innovation, leadership and trust, Vijayasri Green Homes is one of the South India's leading developers and builders with property management.
+                </p>
+                <div class="footer-contact-info">
+                    <p class="contact-item">
+                        <span class="contact-label">Phone:</span>
+                        <a href="tel:+91-7816000555" class="contact-link">+91-7816000555</a>
+                    </p>
+                    <p class="contact-item">
+                        <span class="contact-label">Email:</span>
+                        <a href="mailto:info@vijayasrigreenhomes.com" class="contact-link">info@vijayasrigreenhomes.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Middle Section - Quick Links & Social Media -->
+            <div class="footer-middle">
+                <h3 class="footer-heading">QUICK LINKS</h3>
+                <nav class="footer-nav">
+                    <a href="../about-us/index.html" class="footer-link">About Us</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#privacy" class="footer-link">Privacy Policy</a>
+                    <a href="index.html" class="footer-link">Contact Us</a>
+                </nav>
+                <div class="social-media">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Section - Contact Form -->
+            <div class="footer-right">
+                <h3 class="footer-heading">CONTACT US</h3>
+                <form class="footer-contact-form" id="footerContactForm">
+                    <div class="form-group">
+                        <input type="text" id="footerName" name="name" placeholder="Name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="footerEmail" name="email" placeholder="Email" class="form-input" required>
+                    </div>
+                    <div class="form-group form-group-phone">
+                        <select id="footerCountryCode" name="countryCode" class="form-select">
+                            <option value="+91" selected>+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+44">+44</option>
+                        </select>
+                        <input type="tel" id="footerPhone" name="phone" placeholder="Contact No." class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="footerMessage" name="message" placeholder="Message" class="form-textarea" rows="4" required></textarea>
+                    </div>
+                    <!-- <div class="form-group form-group-checkbox">
+                                            <input type="checkbox" id="footerAuthorization" name="authorization" class="form-checkbox" required>
+                                            <label for="footerAuthorization" class="checkbox-label">
+                                                I authorize Vijayasri Green Homes and its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call. This will override DND/NDNC.
+                                            </label>
+                                        </div> -->
+                    <button type="submit" class="form-submit-btn">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Bar -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 Vijayasri Green Homes. All rights reserved.</p>
+            <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // Project Data
+        const projectsDataCollection = {
+            ongoing: [
+                {
+                    name: 'Carpediem Villas',
+                    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
+                    totalArea: '5.75 ACRES',
+                    plotted: '87',
+                    approved: 'ONGOING',
+                    location: 'BANGALORE',
+                    micrositeUrl: 'https://carpediemvillas.com/' // Add your microsite URL here
+                }
+            ],
+            completed: [
+                {
+                    name: 'VINTAGE',
+                    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
+                    totalArea: '76',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2008',
+                    location: 'BANGALORE'
+                },
+                {
+                    name: 'VIJAYASRI LAPIS LAZULI',
+                    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
+                    totalArea: '64',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2009',
+                    location: 'BANGALORE'
+                },
+                {
+                    name: 'VIJAYASRI GOLDEN ORCHIDS',
+                    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop',
+                    totalArea: '80',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2010',
+                    location: 'BANGALORE'
+                },
+                {
+                    name: 'VIJAYASRI ELIXIR',
+                    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop',
+                    totalArea: '171',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2013',
+                    location: 'BANGALORE'
+                }, {
+                    name: 'ROYAL FORTE',
+                    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop',
+                    totalArea: '20',
+                    plotted: '3BHK',
+                    approved: '2000',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI ENCLAVE',
+                    image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop',
+                    totalArea: '16',
+                    plotted: '2BHK',
+                    approved: '2002',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI SHANTHI RESIDENCY',
+                    image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D',
+                    totalArea: '12',
+                    plotted: '2BHK',
+                    approved: '2002',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI VASISTA SADANAM',
+                    image: 'https://media.istockphoto.com/id/1188794534/photo/canadian-house-in-montreals-suburbs.webp?a=1&b=1&s=612x612&w=0&k=20&c=l-tOOdnH3pnS3j7kZXEF398iN6adS8PleT0pJmnDtqY=',
+                    totalArea: '19',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2004',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI NIVAS',
+                    image: 'https://plus.unsplash.com/premium_photo-1661779601614-9206e0451077?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D',
+                    totalArea: '17',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2004',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI SURABHI ARCADE',
+                    image: 'https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '20',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2005',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI NILAYAM ',
+                    image: 'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '12',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2003',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'DIAMOND PALACE',
+                    image: 'https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '76',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'C.B. EASTERN HOMES BLOCK A',
+                    image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '21',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'C.B EASTERN HOMES BLOCK B',
+                    image: 'https://plus.unsplash.com/premium_photo-1661963177937-c0bf63f55d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D',
+                    totalArea: '16',
+                    plotted: '2BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI GREEN HOMES',
+                    image: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '42',
+                    plotted: '2BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI DACHEPALLY ENCLAVE',
+                    image: 'https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '24',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI ROYAL CREST',
+                    image: 'https://plus.unsplash.com/premium_photo-1725408060526-9ce882f286f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8',
+                    totalArea: '20',
+                    plotted: '2BHK',
+                    approved: '2008',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI MIDAS TOUCH',
+                    image: 'https://media.istockphoto.com/id/1309642021/photo/beautiful-living-room-and-kitchen-in-new-luxury-home-with-waterfall-island-pendant-lights-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=XmVbwlD7o08GvuVvJIPutThwvWGN3hmFSqYWwLOB19s=',
+                    totalArea: '72',
+                    plotted: '3BHK',
+                    approved: '2010',
+                    location: 'HYDERABAD'
+                }
+            ],
+            upcoming: [
+                {
+                    name: 'C.B. EASTERN HOMES BLOCK A',
+                    image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '21',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'C.B EASTERN HOMES BLOCK B',
+                    image: 'https://plus.unsplash.com/premium_photo-1661963177937-c0bf63f55d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D',
+                    totalArea: '16',
+                    plotted: '2BHK',
+                    approved: '2006',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI GREEN HOMES',
+                    image: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '42',
+                    plotted: '2BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
+                },
+                {
+                    name: 'VIJAYASRI DACHEPALLY ENCLAVE',
+                    image: 'https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                    totalArea: '24',
+                    plotted: '2BHK & 3BHK',
+                    approved: '2007',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI ROYAL CREST',
+                    image: 'https://plus.unsplash.com/premium_photo-1725408060526-9ce882f286f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8',
+                    totalArea: '20',
+                    plotted: '2BHK',
+                    approved: '2008',
+                    location: 'HYDERABAD'
+                }, {
+                    name: 'VIJAYASRI MIDAS TOUCH',
+                    image: 'https://media.istockphoto.com/id/1309642021/photo/beautiful-living-room-and-kitchen-in-new-luxury-home-with-waterfall-island-pendant-lights-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=XmVbwlD7o08GvuVvJIPutThwvWGN3hmFSqYWwLOB19s=',
+                    totalArea: '72',
+                    plotted: '3BHK',
+                    approved: '2010',
+                    location: 'HYDERABAD'
+                }
+            ]
+        };
+
+        // Get DOM elements
+        const featuredProjectContainer = document.getElementById('featuredProjectContainer');
+        const projectsDisplayGrid = document.getElementById('projectsDisplayGrid');
+        const projectsTabItems = document.querySelectorAll('.projects-tab-item');
+
+
+        // <span class="featured-project-tag">Current Project</span>
+
+        // Function to render featured project (for ongoing)
+        function renderFeaturedProject(project) {
+            featuredProjectContainer.innerHTML = `
+                <div class="featured-project-wrapper">
+                    <div class="featured-project-image-section">
+                        <img src="${
+                project.image
+            }" alt="${
+                project.name
+            }" class="featured-project-image">
+                    </div>
+                    <div class="featured-project-content-section">
+                        <h3 class="featured-project-title">${
+                project.name
+            }</h3>
+                        
+                        <div class="featured-project-details">
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">No. of Plottes</span>
+                                <span class="featured-detail-value">${
+                project.totalArea
+            }</span>
+                            </div>
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">Plottes type</span>
+                                <span class="featured-detail-value">${
+                project.plotted
+            }</span>
+                            </div>
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">Completed year</span>
+                                <span class="featured-detail-value">${
+                project.approved
+            }</span>
+                            </div>
+                            <div class="featured-project-detail-item">
+                                <span class="featured-detail-label">Location</span>
+                                <span class="featured-detail-value">${
+                project.location
+            }</span>
+                            </div>
+                        </div>
+
+                        <div class="featured-project-cta">
+                            <a href="${
+                project.micrositeUrl
+            }" class="featured-project-button">
+                                <span>View Project Details</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to render projects grid (for completed & upcoming)
+        function renderProjectsGrid(category) {
+            const projectsList = projectsDataCollection[category];
+
+            // Clear existing content
+            projectsDisplayGrid.innerHTML = '';
+
+            // Add projects
+            projectsList.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-display-card';
+
+                projectCard.innerHTML = `
+                    <div class="project-card-image-wrapper">
+                        <img src="${
+                    project.image
+                }" alt="${
+                    project.name
+                }" class="project-card-main-image">
+                        <div class="project-card-hover-overlay">
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">No. of Plotted Villas:</span> ${
+                    project.totalArea
+                }
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Plotted Tpyes:</span> ${
+                    project.plotted
+                }
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Completed year:</span> ${
+                    project.approved
+                }
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Location:</span> ${
+                    project.location
+                }
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-card-title-section">
+                        <h3 class="project-card-display-title">${
+                    project.name
+                }</h3>
+                    </div>
+                `;
+
+                projectsDisplayGrid.appendChild(projectCard);
+            });
+        }
+
+        // Function to handle display based on category
+        function displayProjects(category) { // Reset animations
+            featuredProjectContainer.style.opacity = '0';
+            projectsDisplayGrid.style.opacity = '0';
+
+            setTimeout(() => {
+                if (category === 'ongoing') { // Show featured layout for ongoing
+                    featuredProjectContainer.classList.add('active');
+                    projectsDisplayGrid.classList.remove('active');
+                    renderFeaturedProject(projectsDataCollection.ongoing[0]);
+                } else { // Show grid layout for completed and upcoming
+                    featuredProjectContainer.classList.remove('active');
+                    projectsDisplayGrid.classList.add('active');
+                    renderProjectsGrid(category);
+                }
+
+                // Trigger animation
+                setTimeout(() => {
+                    featuredProjectContainer.style.opacity = '1';
+                    projectsDisplayGrid.style.opacity = '1';
+                }, 50);
+            }, 100);
+        }
+
+        // Tab click handlers
+        projectsTabItems.forEach(tab => {
+            tab.addEventListener('click', function () { // Remove active class from all tabs
+                projectsTabItems.forEach(t => t.classList.remove('projects-tab-active'));
+
+                // Add active class to clicked tab
+                this.classList.add('projects-tab-active');
+
+                // Get category and display projects
+                const category = this.getAttribute('data-project-category');
+                displayProjects(category);
+            });
+        });
+
+        // Initial render - show ongoing project
+        displayProjects('ongoing');
+    </script>
+    <script src="../home/navbar.js"></script>
+</body></html>
