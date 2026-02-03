@@ -26,6 +26,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 // Mobile dropdown functionality
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.dropdown');
+    const submenuItems = document.querySelectorAll('.has-submenu');
     
     dropdowns.forEach(dropdown => {
         const dropdownLink = dropdown.querySelector('a');
@@ -38,12 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Handle mobile submenu toggle
+    submenuItems.forEach(submenuItem => {
+        const submenuSpan = submenuItem.querySelector('span');
+        
+        submenuSpan.addEventListener('click', (e) => {
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                submenuItem.classList.toggle('active');
+            }
+        });
+    });
     
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.dropdown')) {
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('active');
+            });
+            submenuItems.forEach(submenuItem => {
+                submenuItem.classList.remove('active');
             });
         }
     });

@@ -189,6 +189,91 @@
             width: calc(100% - 3rem);
         }
 
+        /* Submenu Styles */
+        .dropdown-item {
+            position: relative;
+        }
+
+        .has-submenu > span {
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .has-submenu > span::before {
+            content: '▶';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            transition: transform 0.3s ease;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            min-width: 180px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            z-index: 1002;
+            padding: 0.5rem 0;
+            margin-left: 10px;
+        }
+
+        .navbar.scrolled .submenu {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .has-submenu:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .submenu a {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .navbar.scrolled .submenu a {
+            color: var(--primary-dark);
+        }
+
+        .submenu a::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 1.5rem;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .submenu a:hover::after {
+            width: calc(100% - 3rem);
+        }
+
         .dropdown > a::after {
             content: '';
             position: absolute;
@@ -1148,6 +1233,49 @@
                 transform: none;
             }
 
+            /* Mobile submenu styles */
+            .submenu {
+                position: static;
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: none;
+                box-shadow: none;
+                border-radius: 0;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-left: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .has-submenu.active .submenu {
+                max-height: 100px;
+            }
+
+            .submenu a {
+                background: transparent !important;
+                color: rgba(255, 255, 255, 0.7) !important;
+                padding: 0.4rem 1rem;
+                font-size: 0.75rem;
+                margin-left: 2rem;
+                border-left: 2px solid var(--accent-gold);
+            }
+
+            .submenu a::after {
+                display: none;
+            }
+
+            .submenu a:hover {
+                color: var(--accent-gold) !important;
+                transform: none;
+            }
+
+            .has-submenu > span::before {
+                display: none;
+            }
+
             .dropdown > a::before {
                 display: none;
             }
@@ -1956,7 +2084,12 @@
                 <li class="dropdown">
                     <a href="./projects/">Projects</a>
                     <div class="dropdown-content">
-                        <span>Ongoing</span>
+                        <div class="dropdown-item has-submenu">
+                            <span>Ongoing</span>
+                            <div class="submenu">
+                                <a href="https://carpediemvillas.com/" target="_blank">Carpediem Villas</a>
+                            </div>
+                        </div>
                         <span>Completed</span>
                         <span>Upcoming</span>
                     </div>
