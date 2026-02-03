@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carpediem Villas - Ongoing Project</title>
+    <title>Projects Section - Amogaya Adorit</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
@@ -32,16 +32,15 @@
             font-family: "Manrope", sans-serif;
             color: var(--text-primary);
             background: white;
-            line-height: 1.6;
         }
 
         /* Banner Section */
         .hero-banner-section {
             position: relative;
-            height: 65vh;
-            min-height: 450px;
+            height: 75vh;
+            min-height: 400px;
             background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-            background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&h=1080&fit=crop&q=90');
+            background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&h=900&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -57,7 +56,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 26, 26, 0.65);
+            background: rgba(26, 26, 26, 0.7);
             z-index: 1;
         }
 
@@ -139,230 +138,26 @@
             }
         }
 
-        /* Ongoing Project Section */
-        .ongoing-project-section {
-            padding: 6rem 0;
-            background: white;
-        }
+        /* Responsive Design for Banner */
+        @media(max-width: 1024px) {
+            .hero-banner-section {
+                height: 50vh;
+                min-height: 350px;
+            }
 
-        .ongoing-project-container {
-            /* max-width: 1400px; */
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .section-heading {
-            font-family: "Sora", sans-serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 4rem;
-            letter-spacing: 1px;
-            text-align: left;
-            text-align: center;
-        }
-
-        /* Project Display */
-        .project-display-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            align-items: stretch;
-            background: white;
-        }
-
-        .project-image-container {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            min-height: 500px;
-            overflow: hidden;
-        }
-
-        .project-main-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .project-display-wrapper:hover .project-main-image {
-            transform: scale(1.05);
-        }
-
-        .project-info-container {
-            padding: 4rem;
-            background: var(--primary-light);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-height: 500px;
-        }
-
-        .project-title {
-            font-family: "Sora", sans-serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 3rem;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-
-        .project-details-list {
-            margin-bottom: 3rem;
-        }
-
-        .project-detail-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .project-detail-row:first-child {
-            padding-top: 0;
-        }
-
-        .project-detail-row:last-child {
-            border-bottom: none;
-        }
-
-        .detail-label {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .detail-value {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            letter-spacing: 0.5px;
-            text-align: right;
-        }
-
-        .project-cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem 3rem;
-            background: var(--primary-dark);
-            color: white;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 17rem;
-            border-radius: 8px;
-        }
-
-        .project-cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-gold);
-            transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 0;
-        }
-
-        .project-cta-button:hover::before {
-            left: 0;
-        }
-
-        .project-cta-button span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-cta-button svg {
-            position: relative;
-            z-index: 1;
-            transition: transform 0.3s ease;
-        }
-
-        .project-cta-button:hover svg {
-            transform: translateX(5px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
             .hero-banner-title {
                 font-size: 4rem;
-            }
-
-            .project-info-container {
-                padding: 3rem 4rem;
-            }
-
-            .project-title {
-                font-size: 2.5rem;
-            }
-
-            .section-heading {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .hero-banner-section {
-                height: 55vh;
-                min-height: 400px;
-            }
-
-            .hero-banner-title {
-                font-size: 3.5rem;
             }
 
             .hero-banner-subtitle {
                 font-size: 1.2rem;
             }
-
-            .project-display-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .project-image-container {
-                min-height: 450px;
-            }
-
-            .project-info-container {
-                padding: 3rem;
-            }
-
-            .project-title {
-                font-size: 2.2rem;
-                margin-bottom: 2.5rem;
-            }
-
-            .ongoing-project-section {
-                padding: 5rem 0;
-            }
-
-            .section-heading {
-                font-size: 2rem;
-                margin-bottom: 3rem;
-            }
         }
 
-        @media (max-width: 768px) {
+        @media(max-width: 768px) {
             .hero-banner-section {
-                height: 50vh;
-                min-height: 350px;
+                height: 45vh;
+                min-height: 300px;
                 background-attachment: scroll;
             }
 
@@ -379,56 +174,16 @@
             .hero-banner-breadcrumb {
                 font-size: 0.85rem;
             }
-
-            .ongoing-project-section {
-                padding: 4rem 0;
-            }
-
-            .section-heading {
-                font-size: 1.8rem;
-                margin-bottom: 2.5rem;
-            }
-
-            .project-image-container {
-                min-height: 350px;
-            }
-
-            .project-info-container {
-                padding: 2.5rem 2rem;
-            }
-
-            .project-title {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            .project-detail-row {
-                gap: 1.5rem;
-                padding: 1.2rem 0;
-            }
-
-            .detail-label {
-                font-size: 0.85rem;
-            }
-
-            .detail-value {
-                font-size: 0.95rem;
-            }
-
-            .project-cta-button {
-                padding: 1.2rem 2.5rem;
-                font-size: 0.9rem;
-            }
         }
 
-        @media (max-width: 480px) {
+        @media(max-width: 480px) {
             .hero-banner-section {
-                height: 45vh;
-                min-height: 300px;
+                height: 40vh;
+                min-height: 280px;
             }
 
             .hero-banner-title {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
                 letter-spacing: 1px;
             }
 
@@ -440,76 +195,189 @@
                 font-size: 0.8rem;
                 gap: 0.75rem;
             }
+        }
 
-            .ongoing-project-section {
-                padding: 3rem 0;
+        /* Projects Section */
+        .projects-showcase-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .projects-showcase-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-showcase-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .projects-showcase-title {
+            font-family: "Sora", sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Projects Grid */
+        .projects-display-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: projectsFadeIn 0.6s ease forwards;
+        }
+
+        @keyframes projectsFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Project Card */
+        .project-display-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--primary-light);
+        }
+
+        .project-card-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            overflow: hidden;
+        }
+
+        .project-card-main-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-display-card:hover .project-card-main-image {
+            transform: scale(1.08);
+        }
+
+        /* Hover Overlay */
+        .project-card-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 42, 78, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        .project-display-card:hover .project-card-hover-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay-detail {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .project-overlay-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-overlay-label {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* Project Title Below Image */
+        .project-card-title-section {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .project-card-display-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 1024px) {
+            .projects-display-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
 
-            .section-heading {
-                font-size: 1.6rem;
-                margin-bottom: 2rem;
+            .projects-showcase-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .projects-showcase-section {
+                padding: 5rem 5%;
             }
 
-            .project-image-container {
-                min-height: 280px;
+            .projects-showcase-title {
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
             }
 
-            .project-info-container {
-                padding: 2rem 1.5rem;
-            }
-
-            .project-title {
-                font-size: 1.75rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .project-detail-row {
+            .projects-display-grid {
                 grid-template-columns: 1fr;
-                gap: 0.5rem;
-                padding: 1rem 0;
+                gap: 2rem;
+                margin-top: 3rem;
             }
 
-            .detail-value {
-                text-align: left;
-                margin-top: 0.3rem;
+            .project-card-display-title {
+                font-size: 1.1rem;
             }
 
-            .detail-label {
-                font-size: 0.8rem;
-            }
-
-            .detail-value {
+            .project-overlay-detail {
                 font-size: 0.9rem;
             }
 
-            .project-cta-button {
-                padding: 1.1rem 2rem;
-                font-size: 0.85rem;
-            }
-        }
-        .featured-project-description {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.3px;
-        }
-
-        /* Mobile responsive for description */
-        @media(max-width: 768px) {
-            .featured-project-description {
-                font-size: 1rem;
-                line-height: 1.7;
-                margin-bottom: 2rem;
+            .project-card-hover-overlay {
+                padding: 1.5rem;
             }
         }
 
         @media(max-width: 480px) {
-            .featured-project-description {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin-bottom: 1.5rem;
+            .projects-showcase-title {
+                font-size: 2rem;
+            }
+
+            .project-card-display-title {
+                font-size: 1rem;
+            }
+
+            .project-card-title-section {
+                padding: 1rem 0;
             }
         }
     </style>
@@ -544,6 +412,8 @@
             </div>
         </div>
     </nav>
+
+
     <!-- Banner Section -->
     <section class="hero-banner-section">
         <div class="hero-banner-overlay"></div>
@@ -559,45 +429,24 @@
             </div>
         </div>
     </section>
+    
+    <!-- Projects Section -->
+    <section class="projects-showcase-section">
+        <div class="projects-showcase-wrapper">
+            <div class="projects-showcase-header">
+                <h2 class="projects-showcase-title">Upcoming Projects</h2>
+            </div>
 
-    <!-- Ongoing Project Section -->
-    <section class="ongoing-project-section">
-        <div class="ongoing-project-container">
-            <h2 class="section-heading">Ongoing Project</h2>
-
-            <div class="project-display-wrapper">
-                <!-- Project Image -->
-                <div class="project-image-container">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&q=90" 
-                         alt="Carpediem Villas" 
-                         class="project-main-image">
-                </div>
-
-                <!-- Project Information -->
-                <div class="project-info-container">
-                    <h3 class="project-title">Carpediem Villas</h3>
-
-                    <p class="featured-project-description">
-                        Carpe Diem Villas is a boutique community designed for those who believe life should be celebrated every day. Offering premium villas surrounded by lush landscapes, the project blends refined architecture with the comfort of spacious living. Each villa is thoughtfully crafted to ensure natural light, privacy, and a seamless indoor–outdoor lifestyle. With premium amenities, secure infrastructure, and excellent connectivity to key urban locations, Carpe Diem Villas promises a life where convenience and calm coexist beautifully. Here, every sunrise brings a new opportunity to enjoy the finer things in life — because at Carpe Diem Villas, you truly seize the day.
-                    </p>
-
-                    <a href="https://carpediemvillas.com/" class="project-cta-button" target="_blank">
-                        <span>View Project</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
+            <!-- Projects Grid Container -->
+            <div class="projects-display-grid" id="projectsDisplayGrid">
+                <!-- Projects will be dynamically inserted here -->
             </div>
         </div>
     </section>
 
-    
     <!-- Footer Section -->
     <footer class="footer-section">
-        <div
-            class="footer-container">
+        <div class="footer-container">
             <!-- Left Section - Company Information -->
             <div class="footer-left">
                 <div class="footer-logo-wrapper">
@@ -676,12 +525,6 @@
                     <div class="form-group">
                         <textarea id="footerMessage" name="message" placeholder="Message" class="form-textarea" rows="4" required></textarea>
                     </div>
-                    <!-- <div class="form-group form-group-checkbox">
-                                            <input type="checkbox" id="footerAuthorization" name="authorization" class="form-checkbox" required>
-                                            <label for="footerAuthorization" class="checkbox-label">
-                                                I authorize Vijayasri Green Homes and its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call. This will override DND/NDNC.
-                                            </label>
-                                        </div> -->
                     <button type="submit" class="form-submit-btn">SUBMIT</button>
                 </form>
             </div>
@@ -699,6 +542,100 @@
         </div>
     </footer>
 
+    <script>
+        // Upcoming Projects Data
+        const upcomingProjects = [
+            {
+                name: 'C.B. EASTERN HOMES BLOCK A',
+                image: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                totalArea: '21',
+                plotted: '2BHK & 3BHK',
+                approved: '2006',
+                location: 'HYDERABAD'
+            },
+            {
+                name: 'C.B EASTERN HOMES BLOCK B',
+                image: 'https://plus.unsplash.com/premium_photo-1661963177937-c0bf63f55d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D',
+                totalArea: '16',
+                plotted: '2BHK',
+                approved: '2006',
+                location: 'HYDERABAD'
+            },
+            {
+                name: 'VIJAYASRI GREEN HOMES',
+                image: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                totalArea: '42',
+                plotted: '2BHK',
+                approved: '2007',
+                location: 'HYDERABAD'
+            },
+            {
+                name: 'VIJAYASRI DACHEPALLY ENCLAVE',
+                image: 'https://images.unsplash.com/photo-1723110994499-df46435aa4b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D',
+                totalArea: '24',
+                plotted: '2BHK & 3BHK',
+                approved: '2007',
+                location: 'HYDERABAD'
+            },
+            {
+                name: 'VIJAYASRI ROYAL CREST',
+                image: 'https://plus.unsplash.com/premium_photo-1725408060526-9ce882f286f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8',
+                totalArea: '20',
+                plotted: '2BHK',
+                approved: '2008',
+                location: 'HYDERABAD'
+            },
+            {
+                name: 'VIJAYASRI MIDAS TOUCH',
+                image: 'https://media.istockphoto.com/id/1309642021/photo/beautiful-living-room-and-kitchen-in-new-luxury-home-with-waterfall-island-pendant-lights-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=XmVbwlD7o08GvuVvJIPutThwvWGN3hmFSqYWwLOB19s=',
+                totalArea: '72',
+                plotted: '3BHK',
+                approved: '2010',
+                location: 'HYDERABAD'
+            }
+        ];
+
+        // Get DOM element
+        const projectsDisplayGrid = document.getElementById('projectsDisplayGrid');
+
+        // Function to render all upcoming projects
+        function renderUpcomingProjects() {
+            projectsDisplayGrid.innerHTML = '';
+
+            upcomingProjects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-display-card';
+
+                projectCard.innerHTML = `
+                    <div class="project-card-image-wrapper">
+                        <img src="${project.image}" alt="${project.name}" class="project-card-main-image">
+                        <div class="project-card-hover-overlay">
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">No. of Plotted Villas:</span> ${project.totalArea}
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Plotted Types:</span> ${project.plotted}
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Completed year:</span> ${project.approved}
+                            </p>
+                            <p class="project-overlay-detail">
+                                <span class="project-overlay-label">Location:</span> ${project.location}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-card-title-section">
+                        <h3 class="project-card-display-title">${project.name}</h3>
+                    </div>
+                `;
+
+                projectsDisplayGrid.appendChild(projectCard);
+            });
+        }
+
+        // Initial render
+        renderUpcomingProjects();
+    </script>
     <script src="../home/navbar.js"></script>
 </body>
 </html>

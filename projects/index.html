@@ -696,6 +696,31 @@
                 justify-content: center;
             }
         }
+        .featured-project-description {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* Mobile responsive for description */
+        @media(max-width: 768px) {
+            .featured-project-description {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .featured-project-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -871,7 +896,7 @@
 
         <!-- Bottom Footer Bar -->
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 Vijayasri Green Homes. All rights reserved.</p>
+            <p class="footer-copyright">© 2026 Vijayasri Green Homes. All rights reserved.</p>
             <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
                 <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="12" y1="19" x2="12" y2="5"></line>
@@ -1085,53 +1110,79 @@
 
         // <span class="featured-project-tag">Current Project</span>
 
-        // Function to render featured project (for ongoing)
+        // function renderFeaturedProject(project) {
+        //     featuredProjectContainer.innerHTML = `
+        //         <div class="featured-project-wrapper">
+        //             <div class="featured-project-image-section">
+        //                 <img src="${
+        //         project.image
+        //     }" alt="${
+        //         project.name
+        //     }" class="featured-project-image">
+        //             </div>
+        //             <div class="featured-project-content-section">
+        //                 <h3 class="featured-project-title">${
+        //         project.name
+        //     }</h3>
+                        
+        //                 <div class="featured-project-details">
+        //                     <div class="featured-project-detail-item">
+        //                         <span class="featured-detail-label">No. of Plottes</span>
+        //                         <span class="featured-detail-value">${
+        //         project.totalArea
+        //     }</span>
+        //                     </div>
+        //                     <div class="featured-project-detail-item">
+        //                         <span class="featured-detail-label">Plottes type</span>
+        //                         <span class="featured-detail-value">${
+        //         project.plotted
+        //     }</span>
+        //                     </div>
+        //                     <div class="featured-project-detail-item">
+        //                         <span class="featured-detail-label">Completed year</span>
+        //                         <span class="featured-detail-value">${
+        //         project.approved
+        //     }</span>
+        //                     </div>
+        //                     <div class="featured-project-detail-item">
+        //                         <span class="featured-detail-label">Location</span>
+        //                         <span class="featured-detail-value">${
+        //         project.location
+        //     }</span>
+        //                     </div>
+        //                 </div>
+
+        //                 <div class="featured-project-cta">
+        //                     <a href="${
+        //         project.micrositeUrl
+        //     }" class="featured-project-button">
+        //                         <span>View Project Details</span>
+        //                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        //                             <line x1="5" y1="12" x2="19" y2="12"></line>
+        //                             <polyline points="12 5 19 12 12 19"></polyline>
+        //                         </svg>
+        //                     </a>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     `;
+        // }
+
         function renderFeaturedProject(project) {
             featuredProjectContainer.innerHTML = `
                 <div class="featured-project-wrapper">
                     <div class="featured-project-image-section">
-                        <img src="${
-                project.image
-            }" alt="${
-                project.name
-            }" class="featured-project-image">
+                        <img src="${project.image}" alt="${project.name}" class="featured-project-image">
                     </div>
                     <div class="featured-project-content-section">
-                        <h3 class="featured-project-title">${
-                project.name
-            }</h3>
+                        <h3 class="featured-project-title">${project.name}</h3>
                         
-                        <div class="featured-project-details">
-                            <div class="featured-project-detail-item">
-                                <span class="featured-detail-label">No. of Plottes</span>
-                                <span class="featured-detail-value">${
-                project.totalArea
-            }</span>
-                            </div>
-                            <div class="featured-project-detail-item">
-                                <span class="featured-detail-label">Plottes type</span>
-                                <span class="featured-detail-value">${
-                project.plotted
-            }</span>
-                            </div>
-                            <div class="featured-project-detail-item">
-                                <span class="featured-detail-label">Completed year</span>
-                                <span class="featured-detail-value">${
-                project.approved
-            }</span>
-                            </div>
-                            <div class="featured-project-detail-item">
-                                <span class="featured-detail-label">Location</span>
-                                <span class="featured-detail-value">${
-                project.location
-            }</span>
-                            </div>
-                        </div>
+                        <p class="featured-project-description">
+                            Carpe Diem Villas is a boutique community designed for those who believe life should be celebrated every day. Offering premium villas surrounded by lush landscapes, the project blends refined architecture with the comfort of spacious living. Each villa is thoughtfully crafted to ensure natural light, privacy, and a seamless indoor–outdoor lifestyle. With premium amenities, secure infrastructure, and excellent connectivity to key urban locations, Carpe Diem Villas promises a life where convenience and calm coexist beautifully. Here, every sunrise brings a new opportunity to enjoy the finer things in life — because at Carpe Diem Villas, you truly seize the day.
+                        </p>
 
                         <div class="featured-project-cta">
-                            <a href="${
-                project.micrositeUrl
-            }" class="featured-project-button">
+                            <a href="${project.micrositeUrl}" class="featured-project-button">
                                 <span>View Project Details</span>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
