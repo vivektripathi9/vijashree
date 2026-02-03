@@ -102,3 +102,24 @@
         font-size: 1.4rem;
     }
 }
+
+/* Mac-specific font size reduction */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @supports (-webkit-appearance: none) and (not (transform: translateZ(0))) {
+        .welcome-quote-title {
+            font-size: 2rem !important;
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-quote-title {
+                font-size: 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .welcome-quote-title {
+                font-size: 1.3rem !important;
+            }
+        }
+    }
+}

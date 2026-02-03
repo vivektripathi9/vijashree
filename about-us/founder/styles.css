@@ -163,3 +163,24 @@
         font-size: 0.9rem;
     }
 }
+
+/* Mac-specific font size reduction */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @supports (-webkit-appearance: none) and (not (transform: translateZ(0))) {
+        .founder-detail-title {
+            font-size: 1.8rem !important;
+        }
+        
+        .founder-name {
+            font-size: 1.25rem !important;
+        }
+        
+        .founder-designation {
+            font-size: 0.9rem !important;
+        }
+        
+        .founder-detail-content p {
+            font-size: 0.88rem !important;
+        }
+    }
+}

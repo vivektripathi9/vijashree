@@ -290,3 +290,18 @@
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     }
 }
+
+/* Mac-specific font size reduction */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @supports (-webkit-appearance: none) and (not (transform: translateZ(0))) {
+        .mission-heading,
+        .vision-heading {
+            font-size: 2rem !important;
+        }
+        
+        .mission-text p,
+        .vision-text p {
+            font-size: 0.96rem !important;
+        }
+    }
+}

@@ -157,3 +157,24 @@
         padding: 30px 20px;
     }
 }
+
+/* Mac-specific font size reduction */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @supports (-webkit-appearance: none) and (not (transform: translateZ(0))) {
+        .legacy-title {
+            font-size: 2rem !important;
+        }
+        
+        .legacy-subtitle {
+            font-size: 0.92rem !important;
+        }
+        
+        .stat-number {
+            font-size: 2.25rem !important;
+        }
+        
+        .stat-label {
+            font-size: 0.78rem !important;
+        }
+    }
+}
