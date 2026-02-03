@@ -16,7 +16,7 @@
         :root {
             --primary-dark: #1a1a1a;
             --primary-light: #f8f8f8;
-            --accent-gold: #d4a574;
+            --accent-gold: #2C6C36;
             --text-primary: #2c2c2c;
             --text-secondary: #666666;
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -528,8 +528,18 @@
                 <li>
                     <a href="../about-us/">About Us</a>
                 </li>
-                <li>
+                <li class="dropdown">
                     <a href="./index.html">Projects</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item has-submenu">
+                            <span><a href="../projects/ongoing.html" class="navbar-sub-link">Ongoing</a></span>
+                            <div class="submenu">
+                                <a href="https://carpediemvillas.com/" target="_blank">Carpediem Villas</a>
+                            </div>
+                        </div>
+                        <span><a href="../projects/completed.html" class="navbar-sub-link">Completed</a></span>
+                        <span><a href="../projects/upcoming.html" class="navbar-sub-link">Upcoming</a></span>
+                    </div>
                 </li>
                 <li>
                     <a href="../contact-us/">
@@ -544,6 +554,8 @@
             </div>
         </div>
     </nav>
+
+    
     <!-- Banner Section -->
     <section class="hero-banner-section">
         <div class="hero-banner-overlay"></div>
