@@ -69,8 +69,8 @@
 .mission-heading,
 .vision-heading {
     font-family: 'Sora', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 2rem !important;
+    font-weight: 500;
     color: #1a1a1a;
     margin: 0;
     letter-spacing: 1px;
@@ -89,15 +89,14 @@
 .mission-text p,
 .vision-text p {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.8;
     color: #333333;
     margin: 0;
     text-align: center;
-    max-width: 600px;
+    max-width: 700px;
 }
-
 /* Vision Accent Line */
 .vision-accent-line {
     width: 100px;
@@ -111,7 +110,7 @@
 .vision-image-wrapper {
     width: 100%;
     max-width: 600px;
-    height: 350px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     border-radius: 12px;

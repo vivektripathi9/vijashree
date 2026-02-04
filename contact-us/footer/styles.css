@@ -3,7 +3,7 @@
     width: 100%;
     background: #1a1a1a;
     color: #ffffff;
-    padding: 40px 40px 30px;
+    padding: 40px 40px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -15,6 +15,7 @@
     grid-template-columns: 1.2fr 1fr 1.3fr;
     gap: 40px;
     flex: 1;
+    padding-bottom: 1rem;
 }
 
 /* Left Section - Company Information */
@@ -27,10 +28,13 @@
 .footer-logo-wrapper {
     width: 180px;
     height: auto;
+    width: 100%;
+    justify-content: center;
+    display: flex;
 }
 
 .footer-logo {
-    width: 100%;
+    width: 150px;
     height: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
@@ -165,11 +169,11 @@
 .form-textarea,
 .form-select {
     width: 100%;
-    padding: 10px 12px;
+    padding: 0.4rem 0.5rem;
     background: #2a2a2a;
     border: 1px solid #3a3a3a;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-family: 'Manrope', sans-serif;
     color: #ffffff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -205,12 +209,12 @@
 
 .form-textarea {
     resize: vertical;
-    min-height: 100px;
+    height: 60px !important;
 }
 
 
 .form-submit-btn {
-    padding: 10px 25px;
+    padding: 8px 25px;
     background: #D4AF37;
     color: #1a1a1a;
     border: none;
@@ -222,7 +226,7 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .form-submit-btn:hover {

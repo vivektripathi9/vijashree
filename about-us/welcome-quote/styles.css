@@ -42,7 +42,7 @@
 
 .welcome-quote-title {
     font-family: 'Sora', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
     font-weight: 700;
     color: #fff8e1;
     margin: 0;

@@ -3,13 +3,13 @@ const navbar = document.getElementById('navbar');
 const mobileToggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 50) {
+//         navbar.classList.add('scrolled');
+//     } else {
+//         navbar.classList.remove('scrolled');
+//     }
+// });
 
 // Mobile menu toggle
 mobileToggle.addEventListener('click', () => {
