@@ -1,15 +1,16 @@
 /* Banner Section */
 .banner-section {
     width: 100%;
-    padding: 80px 20px;
+    max-width: 1518px;
+    margin: 0 auto;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
-    height: 60vh;
-    min-height: 500px;
-    max-height: 700px;
+    aspect-ratio: 1518 / 500;
+    height: auto;
 }
 
 .banner-image {
@@ -20,16 +21,11 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    display: block;
 }
 
 .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(45, 80, 22, 0.7) 0%, rgba(26, 51, 16, 0.8) 100%);
-    z-index: 1;
+    display: none;
 }
 
 .banner-content {
@@ -65,7 +61,8 @@
 
 @media (max-width: 480px) {
     .banner-section {
-        padding: 60px 20px;
+        aspect-ratio: 1518 / 500;
+        max-width: 100%;
     }
 
     .banner-title {

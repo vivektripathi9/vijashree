@@ -37,10 +37,13 @@
         /* Banner Section */
         .hero-banner-section {
             position: relative;
-            height: 75vh;
-            min-height: 400px;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            aspect-ratio: 1600 / 900;
+            height: auto;
             background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-            background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&h=900&fit=crop');
+            background-image: url('../components/newimages/Projects Banner.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -141,8 +144,8 @@
         /* Responsive Design for Banner */
         @media(max-width: 1024px) {
             .hero-banner-section {
-                height: 50vh;
-                min-height: 350px;
+                aspect-ratio: 1600 / 900;
+                max-width: 100%;
             }
 
             .hero-banner-title {
@@ -156,8 +159,8 @@
 
         @media(max-width: 768px) {
             .hero-banner-section {
-                height: 45vh;
-                min-height: 300px;
+                aspect-ratio: 1600 / 900;
+                max-width: 100%;
                 background-attachment: scroll;
             }
 
@@ -178,8 +181,8 @@
 
         @media(max-width: 480px) {
             .hero-banner-section {
-                height: 40vh;
-                min-height: 280px;
+                aspect-ratio: 1600 / 900;
+                max-width: 100%;
             }
 
             .hero-banner-title {
@@ -293,6 +296,7 @@
         .featured-project-image-section {
             position: relative;
             width: 100%;
+            max-width: 651px;
             height: 350px;
             overflow: hidden;
             border-radius: 10px;
@@ -920,7 +924,7 @@
             ongoing: [
                 {
                     name: 'Carpediem Villas',
-                    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
+                    image: '../components/Carpe.png',
                     totalArea: '5.75 ACRES',
                     plotted: '87',
                     approved: 'ONGOING',
