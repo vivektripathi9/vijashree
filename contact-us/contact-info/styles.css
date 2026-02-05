@@ -12,7 +12,7 @@
 .contact-info-title {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #233220;
     text-align: center;
     margin: 0 0 30px 0;
     letter-spacing: 1px;
@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #1a1a1a;
+    color: #233220;
     transition: transform 0.3s ease;
 }
 
@@ -68,7 +68,7 @@
 .info-card-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #000000;
+    color: #233220;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -76,12 +76,12 @@
 .info-card-text {
     font-size: 0.9rem;
     line-height: 1.7;
-    color: #000000;
+    color: #233220;
     margin: 0;
 }
 
 .info-link {
-    color: #000000;
+    color: #233220;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;

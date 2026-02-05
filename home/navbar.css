@@ -48,7 +48,7 @@
 }
 
 .nav-links a {
-    color: #000;
+    color: #233220;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
@@ -101,7 +101,7 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    color: #000 !important;
+    color: #233220 !important;
 }
 
 .navbar.scrolled .dropdown-content {
@@ -125,7 +125,7 @@
     width: 100%;
     padding: 0.75rem 1.5rem;
     background: transparent;
-    color: #000 !important;
+    color: #233220 !important;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -209,7 +209,7 @@
     width: 100%;
     padding: 0.75rem 1.5rem;
     background: transparent;
-    color: #000;
+    color: #233220;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 400;
@@ -278,8 +278,8 @@
 .cta-button {
     padding: 0.75rem 1.8rem;
     background: transparent;
-    border: 1px solid #000;
-    color: #000;
+    border: 1px solid #233220;
+    color: #233220;
     font-size: 0.85rem;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -312,7 +312,7 @@
 .mobile-toggle span {
     width: 28px;
     height: 2px;
-    background: #000;
+    background: #233220;
     transition: var(--transition-smooth);
 }
 
@@ -326,7 +326,7 @@
     width: 60px;
 }
 .navbar-sub-link{
-    color: #000 !important;
+    color: #233220 !important;
 }
 
 /* Responsive Design */
@@ -367,7 +367,7 @@
         display: block;
         width: 100%;
         padding: 1rem 0;
-        color: #000 !important;
+        color: #233220 !important;
         font-size: 0.9rem;
         font-weight: 500;
     }
@@ -438,7 +438,7 @@
 
     .dropdown-content span {
         background: transparent !important;
-        color: #000 !important;
+        color: #233220 !important;
         padding: 0.75rem 1rem;
         font-size: 0.85rem;
         font-weight: 400;
@@ -448,7 +448,7 @@
     }
 
     .dropdown-content span a {
-        color: #000 !important;
+        color: #233220 !important;
         text-decoration: none;
         flex: 1;
     }
@@ -511,7 +511,7 @@
 
     .submenu a {
         background: transparent !important;
-        color: #000 !important;
+        color: #233220 !important;
         padding: 0.65rem 1rem;
         font-size: 0.8rem;
         font-weight: 400;
