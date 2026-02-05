@@ -2771,7 +2771,7 @@
                         <img src="${project.image}" alt="${project.name}" class="project-card-main-image">
                         <div class="project-card-hover-overlay">
                             <p class="project-overlay-detail">
-                                <span class="project-overlay-label">No. of Plotted Villas:</span> ${project.totalArea}
+                                <span class="project-overlay-label">${category === 'completed' ? 'No. of Units:' : 'No. of Plotted Villas:'}</span> ${project.totalArea}
                             </p>
                             <p class="project-overlay-detail">
                                 <span class="project-overlay-label">Plotted Tpyes:</span> ${project.plotted}
